@@ -3,11 +3,11 @@ const { User, Post } = require('../models');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return  await User.find();
     },
 
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return await User.findOne({ _id: userId });
     },
 
     getAllPosts: async () => {
@@ -25,8 +25,8 @@ const resolvers = {
       return User.create({ name });
     },
     createPost: async (parent, args, context, info) => {
-      const { title, description } = args.post
-      const post = new Post({ title, description })
+      const { title, description, user } = args.post
+      const post = new Post({ title, description, user })
       await post.save()
       return post;
     },
@@ -38,13 +38,16 @@ const resolvers = {
     },
     updatePost: async (parent, args, context, info) => {
       const { id } = args
-      const { title, description } = args.post;
+      const { title, description, user } = args.post;
       const updates = {}
       if (title !== undefined) {
         updates.title = title
       }
       if (description !== undefined) {
         updates.description = description
+      }
+      if (user !== undefined) {
+        updates.user = user
       }
 
       const post = await Post.findByIdAndUpdate(
