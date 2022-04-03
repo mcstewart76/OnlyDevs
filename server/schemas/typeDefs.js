@@ -17,6 +17,7 @@ const typeDefs = gql`
     users: [User]!
     user(userId: ID!): User
     getAllPosts: [Post]
+    getPost(id: ID): Post
   }
 
   input PostInput {
@@ -30,6 +31,8 @@ const typeDefs = gql`
     removeuser(userId: ID!): User
     removeSkill(userId: ID!, skill: String!): User
     createPost(post: PostInput): Post
+    deletePost(id: ID): String
+    updatePost(id: ID, post: PostInput): Post
   }
 `;
 
