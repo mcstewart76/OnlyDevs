@@ -6,8 +6,8 @@ const resolvers = {
       return  await User.find();
     },
 
-    user: async (parent, { userId }) => {
-      return await User.findOne({ _id: userId });
+    user: async (parent, { username }) => {
+      return await User.findOne({ _id: username });
     },
 
     getAllPosts: async () => {

@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     id: ID
-    name: String
+    username: String
     skills: [String]!
     post: [Post]
   }
@@ -17,7 +17,7 @@ const typeDefs = gql`
 
   type Query {
     users: [User]!
-    user(userId: ID!): User
+    user(_id: ID!): User
     getAllPosts: [Post]
     getPost(id: ID): Post
   }
