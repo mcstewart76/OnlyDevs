@@ -1,27 +1,27 @@
 [
   
   {
-    "username": "Michael Stewart",
+    "userName": "Michael Stewart",
     "email": "ms@gmail.com",
     "password": "password02"
   },
   {
-    "username": "kyle Chiu",
+    "userName": "kyle Chiu",
     "email": "kc@gmail.com",
     "password": "password03"
   },
   {
-    "username": "Michael Kelly",
+    "userName": "Michael Kelly",
     "email": "mk@gmail.com",
     "password": "password04"
   },
   {
-    "username": "Jack Beans",
+    "userName": "Jack Beans",
     "email": "jb@gmail.com",
     "password": "password05"
   },
   {
-    "username": "Ernesto Tham",
+    "userName": "Ernesto Tham",
     "email": "ernestotha@gmail.com",
     "password": "password01"
   }

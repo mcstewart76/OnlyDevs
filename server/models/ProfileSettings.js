@@ -2,13 +2,13 @@ const { Schema, model } = require('mongoose');
 
 
 const profileSettingSchema = new Schema({
-  user_id: {
+  userId: {
     type: String,
     required: true,
     unique: true,
     trim: true,
   },
-  UI_skin: {
+  uiSkin: {
     type: String,
   },
   email:{
@@ -22,6 +22,6 @@ const profileSettingSchema = new Schema({
 });
 
 
-const ProfileSetting = model('profileSetting', profileSettingSchema);
+const ProfileSetting = model('profilesetting', profileSettingSchema);
 
 module.exports = ProfileSetting;

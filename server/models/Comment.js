@@ -2,14 +2,14 @@ const { Schema, model } = require('mongoose');
 
 const reactionSchema = new Schema(
     {
-      reaction_body: {
+      reactionBody: {
         type: String,
         required: true,
         max_length: 280,
   
       },
   
-      user_name:
+      userName:
       {
         type: String,
         required: true,
@@ -33,14 +33,14 @@ const reactionSchema = new Schema(
   const commentSchema = new Schema(
     {
       
-      comment_body: {
+      commentBody: {
         type: String,
         required: true,
         max_length: 280,
   
       },
   
-      user_name:
+      userName:
       {
         type: String,
         required: true,

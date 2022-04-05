@@ -9,19 +9,19 @@ const postSchema = new Schema({
     description: {
         type: String,
       },
-    post_body: {
+    postBody: {
       type: String,
     },
       
-    user_id: {
+    userId: {
         type: Schema.Types.ObjectId, ref: 'user' 
     },
 
-    comment_id:{
+    commentId:{
         type: Schema.Types.ObjectId, ref: 'comment'
 
     },
-    created_on: {
+    createdAt: {
       type: Date,
       default: Date.now,
       get: dateFormat

@@ -6,8 +6,14 @@ const resolvers = {
       return  await User.find();
     },
 
-    user: async (parent, { username }) => {
-      return await User.findOne({ _id: username });
+    user: async (parent, { userID }) => {
+      return await User.findOne({ _id: userID });
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return Profile.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     getAllPosts: async () => {
@@ -21,8 +27,27 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { name }) => {
-      return User.create({ name });
+    addUser: async (parent, { name, email, password  }) => {
+      const newUser = await User.create({ name, email, password });
+      const token = signToken(newUser);
+
+      return { token, newUser };
+    },
+    login: async (parent, { email, password }) => {
+      const userAccount = await User.findOne({ email });
+
+      if (!userAccount) {
+        throw new AuthenticationError('No profile with this email found!');
+      }
+
+      const correctPw = await User.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect password!');
+      }
+
+      const token = signToken(userAccount);
+      return { token, userAccount };
     },
     createPost: async (parent, args, context, info) => {
       const { title, description, user } = args.post
