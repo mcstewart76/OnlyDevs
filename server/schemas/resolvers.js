@@ -6,8 +6,9 @@ const resolvers = {
       return  await User.find();
     },
 
-    user: async (parent, { userID }) => {
-      return await User.findOne({ _id: userID });
+    getUserById: async (parent, { userID }) => {
+      const user = await User.findOne({ _id: userID })
+      return user;
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -50,8 +51,8 @@ const resolvers = {
       return { token, userAccount };
     },
     createPost: async (parent, args, context, info) => {
-      const { title, description, user } = args.post
-      const post = new Post({ title, description, user })
+      const { title, description, userId } = args.post
+      const post = new Post({ title, description, userId })
       await post.save()
       return post;
     },

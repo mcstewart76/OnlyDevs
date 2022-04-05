@@ -16,7 +16,7 @@ const typeDefs = gql`
     postBody: String
     user: String
     comments: [Comment]
-    create_on: String
+    createAt: String
   }
 
   type Comment {
@@ -34,10 +34,15 @@ const typeDefs = gql`
     secondaryEmail: String
    }
 
+   type Auth {
+    token: ID!
+    profile: User
+  }
 
   type Query {
     users: [User]!
-    user(_id: ID!): User
+    getUserById(_id: ID!): User
+    me: User
     getAllPosts: [Post]
     getPost(id: ID): Post
   }
@@ -50,9 +55,8 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(userName: String!): User
-    addSkill(userId: ID!, skill: String!): User
-    removeuser(userId: ID!): User
-    removeSkill(userId: ID!, skill: String!): User
+    login(email: String!, password: String!): Auth
+    removeUser(userId: ID!): User
     createPost(post: PostInput): Post
     deletePost(id: ID): String
     updatePost(id: ID, post: PostInput): Post
