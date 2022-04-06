@@ -42,6 +42,7 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     getUserById(_id: ID!): User
+    getUserByEmail(email: Email!): User
     me: User
     getAllPosts: [Post]
     getPost(id: ID): Post
@@ -57,6 +58,7 @@ const typeDefs = gql`
     addUser(userName: String!): User
     login(email: String!, password: String!): Auth
     removeUser(userId: ID!): User
+    updateUser(userId: ID!): User
     createPost(post: PostInput): Post
     deletePost(id: ID): String
     updatePost(id: ID, post: PostInput): Post

@@ -6,8 +6,12 @@ const resolvers = {
       return  await User.find();
     },
 
-    getUserById: async (parent, { userID }) => {
-      const user = await User.findOne({ _id: userID })
+    getUserById: async (parent, userId) => {
+      const user = await User.findById( userId )
+      return user;
+    },
+    getUserByEmail: async (parent, userEmail) => {
+      const user = await User.findById( userEmail )
       return user;
     },
     me: async (parent, args, context) => {
@@ -33,6 +37,23 @@ const resolvers = {
       const token = signToken(newUser);
 
       return { token, newUser };
+    },
+    removeUser: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOneAndDelete({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    updateUser: async (parent, params, context) => {
+      if (context.user) {
+        return User.findByIdAndUpdate ( context.user._id, {
+          name: params.name,
+          email: params.email,
+          password: params.password 
+        }, 
+        {new: true});
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     login: async (parent, { email, password }) => {
       const userAccount = await User.findOne({ email });
