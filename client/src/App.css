@@ -30,3 +30,34 @@
 }
 /* End of LoginPage CSS */
 
+/* Wall Page CSS */
+.maincontent{
+  height: 100vh;
+  padding: 1.25rem;
+}
+
+.devs{
+  background-color: lightgray;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.notifications{
+    background-color: darkgray;
+    border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wall{
+  background-color: gray;
+    border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.25rem;
+}
+/* End of Wall Page CSS */

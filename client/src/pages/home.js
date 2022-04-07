@@ -1,16 +1,27 @@
 import React from 'react';
+import { Container, Row, Col, } from 'react-bootstrap';
 
 const Home = () => {
   return (
     <>
-      <div>
-        <div>
-          <h1>Welcome to the homepage</h1>
-          <h1>It's like home...</h1>
-          <h1>but a webpage</h1>
-        </div>
-          
-      </div>
+      <Container fluid>
+        <Row className='maincontent'>
+          <Col className='sidebar' sm={4}>
+            <div className='devs'>
+              <h1>Connected Devs</h1>
+              <p> Dev contacts go here</p>
+            </div>
+            <div className='notifications'>
+              <h1>Notifications</h1>
+              <p> messages, notification, Devs currently online, or whatever can go here</p>
+            </div>
+          </Col>
+
+          <Col className='wall'sm={8}>
+            Giant ass box for wall content
+          </Col>
+        </Row>
+      </Container>
 
     </>
   );
