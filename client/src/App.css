@@ -1,38 +1,32 @@
-.App {
+/* Login Page CSS */
+.loginform{
+  color: purple;
+  font-size: x-large;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #a8a8a8;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, purple, orange) 1;
+  box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.libtn{
+  background-color: purple !important;
+  border: purple !important;
+}
+
+.libtn:hover{
+  background-color: orange;
+  border: orange;
+  padding: 1.25rem;
+}
+
+.odieIMG{
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center;
 }
+/* End of LoginPage CSS */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
