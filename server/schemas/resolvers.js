@@ -1,4 +1,6 @@
 const { User, Post, Comment } = require('../models');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
   Query: {
@@ -32,8 +34,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { name, email, password  }) => {
-      const newUser = await User.create({ name, email, password });
+    addUser: async (parent, { userName, email, password  }) => {
+      const newUser = await User.create({ userName, email, password });
       const token = signToken(newUser);
 
       return { token, newUser };
@@ -62,7 +64,7 @@ const resolvers = {
         throw new AuthenticationError('No profile with this email found!');
       }
 
-      const correctPw = await User.isCorrectPassword(password);
+      const correctPw = await userAccount.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
