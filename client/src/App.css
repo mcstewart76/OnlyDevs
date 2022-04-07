@@ -1,32 +1,46 @@
 /* Login Page CSS */
-.loginform{
-  color: purple;
+body {
+  background-color:#212529 !important;
+}
+
+.loginform {
+  color: rgb(170, 3, 170);
   font-size: x-large;
-  align-items: center !important;
-  justify-content: center !important;
   background-color: #a8a8a8;
-  border: 5px solid;
-  border-image: linear-gradient(45deg, purple, orange) 1;
-  box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey;
-  max-width: 50%;
-  max-height: 50%;
+
+  border-radius: 5%;
+  border: 5px;
+  background: linear-gradient(45deg, purple, orange) 1;
+  /* box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey; */
+
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  max-width: fit-content;
 }
 
-.libtn{
-  background-color: purple !important;
-  border: purple !important;
+.libtn {
+  background-color: rgb(170, 3, 170) !important;
+  border: rgb(170, 3, 170) !important;
 }
 
-.libtn:hover{
+.libtn:hover {
   background-color: orange;
   border: orange;
-  padding: 1.25rem;
+  padding: 0.5rem;
 }
 
-.odieIMG{
+.odieIMG {
   align-items: center !important;
   justify-content: center !important;
   text-align: center;
 }
-/* End of LoginPage CSS */
 
+/* End of LoginPage CSS */
