@@ -1,0 +1,29 @@
+[
+  
+  {
+    "userName": "Michael Stewart",
+    "email": "ms@gmail.com",
+    "password": "password02"
+  },
+  {
+    "userName": "kyle Chiu",
+    "email": "kc@gmail.com",
+    "password": "password03"
+  },
+  {
+    "userName": "Michael Kelly",
+    "email": "mk@gmail.com",
+    "password": "password04"
+  },
+  {
+    "userName": "Jack Beans",
+    "email": "jb@gmail.com",
+    "password": "password05"
+  },
+  {
+    "userName": "Ernesto Tham",
+    "email": "ernestotha@gmail.com",
+    "password": "password01"
+  }
+ 
+]
