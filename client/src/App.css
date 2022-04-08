@@ -52,12 +52,50 @@
     text-align: center;
 }
 
+.search{
+  background-color: lightgray;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .wall{
-  background-color: gray;
     border-radius:5%;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding-bottom: 1.25rem;
+    overflow: scroll;
+}
+
+.posts{
+  background-color: lightgray;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.25rem;
+}
+
+.wallstuff{
+  border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
+    background-color: darkgray;
+    height: 60vh;
+}
+
+.repobox{
+  background-color: slategray;
+  border: solid black ;
+}
+
+.postbox{
+background-color: teal;
+  border: solid black ;
 }
 /* End of Wall Page CSS */
