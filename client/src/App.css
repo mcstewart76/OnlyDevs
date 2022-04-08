@@ -44,3 +44,10 @@ body {
 }
 
 /* End of LoginPage CSS */
+
+
+/* Navbar */
+a{
+  text-decoration: none;
+}
+/* End of Navbar */
