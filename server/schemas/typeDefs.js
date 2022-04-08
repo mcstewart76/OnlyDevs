@@ -9,6 +9,8 @@ const typeDefs = gql`
     preferences:[ProfileSettings]
   }
 
+  
+
   type Post {
     id: ID
     title: String
@@ -39,6 +41,36 @@ const typeDefs = gql`
     profile: User
   }
 
+  type gitHubUser {
+   avatar_url: String
+   bio: String
+   followers: Int
+   following: Int
+   location: String
+   login: String
+   name:  String
+   public_repos: Int
+   url: String
+
+  }
+
+
+  type gitHubUserRepo {
+    id: String
+    name: String
+    language: String
+    updated_at: String
+   
+  }
+
+  type gitHubUserRepos {
+    repos: [gitHubUserRepo]
+
+  }
+
+  
+
+
   type Query {
     users: [User]!
     getUserById(_id: ID!): User
@@ -46,6 +78,9 @@ const typeDefs = gql`
     me: User
     getAllPosts: [Post]
     getPost(id: ID): Post
+    getGitHubUser(githubID: String):gitHubUser
+    getGitHubUserRepos (githubID: String):gitHubUserRepos
+    
   }
 
   input PostInput {
