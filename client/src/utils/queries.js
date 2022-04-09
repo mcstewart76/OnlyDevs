@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_GITHUB_USER = gqp`
+export const QUERY_GITHUB_USER = gql`
 query GetGitHubUser($githubId: String) {
   getGitHubUser(githubID: $githubId) {
     avatar_url
