@@ -1,3 +1,7 @@
+html{
+background-color: #212529;
+}
+
 /* Login Page CSS */
 .loginform{
   color: purple;
@@ -43,14 +47,36 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
 }
 
 .notifications{
-    background-color: darkgray;
+    background-color: lightgray;
     border-radius:5%;
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
 }
 
 .search{
@@ -59,6 +85,17 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
 }
 
 .wall{
@@ -68,6 +105,7 @@
     text-align: center;
     padding-bottom: 1.25rem;
     overflow: hidden;
+    
 }
 
 .posts{
@@ -77,26 +115,84 @@
   align-items: center;
   text-align: center;
   padding-bottom: 1.25rem;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  margin-bottom: 1.25rem;
 }
 
 .wallstuff{
-  border-radius:5%;
+    border-radius:5%;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding-bottom: 1.25rem;
     padding-top: 1.25rem;
-    background-color: darkgray;
     height: 60vh;
+    
 }
 
 .repobox{
   background-color: slategray;
-  border: solid black ;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  margin-bottom: 1.25rem;
+  border-radius: 5%;
 }
 
 .postbox{
-background-color: teal;
-  border: solid black ;
+  background-color: teal;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  margin-bottom: 1.25rem;
+  border-radius: 5%;
+}
+
+Button{
+  padding-bottom: 1.25rem;
 }
 /* End of Wall Page CSS */
+
+/* Navbar CSS */
+
+.linx{
+  align-items: right !important;
+  text-align: right !important;
+  justify-content: right !important;
+  padding-left:.4375rem !important;
+  padding-right: .4375rem !important;
+  text-decoration: none !important;
+  background-image: linear-gradient(45deg, purple, orange) ;
+  background-clip: text;
+  color: transparent;
+}
+
+Link:hover{
+  background-image: linear-gradient(45deg, orange, purple) ;
+  background-clip: text;
+  color: transparent;
+}
+/* End of Navbar CSS */

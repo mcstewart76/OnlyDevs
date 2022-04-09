@@ -37,6 +37,7 @@ const Home = () => {
           </Col>
 
           <Col className='wall' sm={8}>
+            
             <div className='posts'>
               <div>
                 <h1>Making posts</h1>

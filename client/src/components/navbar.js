@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav, } from 'react-bootstrap';
 import {  Link } from "react-router-dom";
-
+import OD from '../ODNavbar.png'
 
 const Navigation = () => {
   return (
@@ -11,12 +11,12 @@ const Navigation = () => {
 
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Navbar.Brand href="/">OnlyDevs</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={OD} alt='logo'></img></Navbar.Brand>
             <Nav className="me-auto">
-              <Link to= "/">Login/Register</Link>
-              <Link to="/Home">Home</Link>
-              <Link to="/profile">Profile</Link>
-              <Link to="/message">Message</Link>
+              <Link className='linx' to= "/">Login/Register</Link>
+              <Link className='linx' to="/Home">Home</Link>
+              <Link className='linx' to="/profile">Profile</Link>
+              <Link className='linx' to="/message">Message</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
