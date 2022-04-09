@@ -12,8 +12,9 @@ const Navigation = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Navbar.Brand href="/">OnlyDevs</Navbar.Brand>
-            <Nav className="me-auto">
-              <Link to= "/">Login/Register</Link>
+            <Nav className="ms-auto">
+              <Link to= "/">Login</Link>
+              <Link to= "/Registration">Register</Link>
               <Link to="/Home">Home</Link>
               <Link to="/profile">Profile</Link>
               <Link to="/message">Message</Link>
