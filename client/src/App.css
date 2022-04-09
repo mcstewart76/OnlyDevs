@@ -66,8 +66,30 @@ a{
     rgba(240, 46, 170, 0.05) -25px -25px;
 }
 
-.mainLay{
+.mainLay, .devCard{
   min-width: none;
   max-width: 756px;
+}
+.profile-picture{
+  max-width: 450px;
+}
+#propic{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  max-height: 200px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: #7dfdfe;
+  box-shadow: 0 0 10px 2px #7dfdfe;
+}
+
+.biocard{
+  max-width: 300px ;
 }
 /* End of Profile */
