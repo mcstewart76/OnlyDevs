@@ -1,6 +1,17 @@
 import React from 'react';
+import { QUERY_GITHUB_USER } from '../../utils/queries';
+
+
+
+
+
+
+
+
+
 
 const Message = () => {
+
   return (
     <>
       <div>
@@ -11,7 +22,7 @@ const Message = () => {
             <div className="row">
               <div className="col-3">
                 <div className="profile-picture text-white">
-                  profile picture
+                
                 </div>
                 <div className="biocard text-white" id="biocard">
                   Bio
