@@ -5,11 +5,33 @@ const Message = () => {
     <>
       <div>
         <div>
-          <h1>Welcome to the Message page</h1>
-          <h1>If you send more than three messages without a reply</h1>
-          <h1>Youre a weirdo</h1>
+
+       
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-3">
+                <div className="profile-picture text-white">
+                  profile picture
+                </div>
+                <div className="biocard text-white" id="biocard">
+                  Bio
+                </div>
+              </div>
+              <div className="col-9">
+                <div className="usernamecard">
+                  <div className="text-white" type="text" id="Search" > user name</div>
+
+
+                </div>
+                <div className="repowallcard text-white" id="repowallcard">
+                  repos
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-          
+
       </div>
 
     </>
