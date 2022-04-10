@@ -56,30 +56,47 @@ a{
 }
 /* End of Navbar */
 
-/* Login Page CSS */
-.loginform{
-  color: purple;
-  font-size: x-large;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: #a8a8a8;
-  border: 5px solid;
-  border-image: linear-gradient(45deg, purple, orange) 1;
-  box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey;
-  max-width: 50%;
-  max-height: 50%;
+/* Profile */
+.boxOut{
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
 }
 
-.libtn{
-  background-color: purple !important;
-  border: purple !important;
+.mainLay, .devCard{
+  min-width: none;
+  max-width: 756px;
+}
+.profile-picture{
+  max-width: 450px;
+}
+#propic{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  max-height: 200px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: #7dfdfe;
+  box-shadow: 0 0 10px 2px #7dfdfe;
 }
 
-.libtn:hover{
-  background-color: orange;
-  border: orange;
-  padding: 1.25rem;
+.biocard{
+  max-width: 300px ;
 }
+<<<<<<< HEAD
 
 .odieIMG{
   align-items: center !important;
@@ -307,3 +324,6 @@ Link:hover{
 }
 /* End of Navbar CSS */
 >>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
+=======
+/* End of Profile */
+>>>>>>> 0c872016ca815e779cc9010788474553735b7af5

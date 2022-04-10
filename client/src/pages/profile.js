@@ -1,92 +1,116 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
+import { QUERY_GITHUB_USER } from '../utils/queries';
+import { useQuery } from '@apollo/client';
+
 
 const Profile = () => {
+
+  //  const [getGitHubUserState, setGitHubUserState] = useState({
+  //   githubId: 'jack-bartlett'});
+
+  const { loading, data } = useQuery(QUERY_GITHUB_USER,
+    {
+      variables: { githubId: 'mcstewart76' }
+    });
+  const p = data?.getGitHubUser || {};
+  // variables: {githubId: 'mcstewart'}
+  // });
+
+
+  // try {
+  //   const { data } = trial({
+  //     variables: { getGitHubUserState }
+  //   });
+
+  // } catch (err) {
+  //   console.error(err);
+  // }
+
   return (
-    <>
-      <Container fluid>
-
-        <Row className='maincontent'>
-
-          <Col className='sidebar' sm={4}>
-
-            <div className='profile card'>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                  <div className='User name'>Dev Name Here</div>
-                  <div className='bio'>
-                    Dev Bio goes here.
-                    Test text, Test text, Test text, Test text, Test text, Test text, Test text
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-
-            <div className='connecteddevs'>
-              <h1>Notifications</h1>
-              <div> messages, notification, Devs currently online, or whatever can go here</div>
-            </div>
-          </Col>
-
-          <Col className='wall' sm={8}>
-            <div className='wallstuff'>
-              <div className='repobox'>
-                <div className='repocontent'>
-                  Repo content here
+    <div className='text-white d-flex flex-wrap p-2 mx-auto flex-items-center justify-content-center container'>
+      <div className='sidebarLay boxOut d-flex m-4'>
+        <Card >
+          <Card.Body>
+            <div className='devCard text-dark p-2 '>
+              <div className='profile '>
+                <div className="profile-picture d-flex">
+                  <img id="propic" src={p.avatar_url} alt="profilepicture" className="rounded-circle rounded mx-auto d-block"></img>
                 </div>
-                <div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
+                <Card.Title className='text-dark d-flex'> {p.name} </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted d-flex">{p.bio}</Card.Subtitle>
               </div>
-
-              <div className='repobox'>
-                <div>
-                  <div className='repocontent'>
-                    Repo content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div>
-
-              <div className='postbox'>
-                <div>
-                  <div className='postcontent'>
-                    Post content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
+              <div className="biocard p-3 " >
               </div>
 
             </div>
 
-          </Col>
 
-        </Row>
 
-      </Container>
-    </>
+          </Card.Body>
+        </Card>
+
+      </div>
+      <div className='mainLay boxOut p-2 d-flex flex-wrap justify-content-center m-4 '>
+
+        <div className=' d-flex justify-content-center flex-wrap px-3'>
+          <Card className='m-2' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+          <Card className='m-2' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+        </div>
+        <div className=' d-flex justify-content-center flex-wrap px-3'>
+          <Card className='m-2 ' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+          <Card className='m-2 ' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+        </div>
+        <div className=' d-flex justify-content-center flex-wrap px-3'>
+          <Card className='m-2 ' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+          <Card className='m-2 ' style={{ width: '18rem' }}>
+            <Card.Body>
+              <Card.Title className='text-dark'>Sample Repo</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+
+            </Card.Body>
+          </Card>
+
+        </div>
+
+      </div>
+
+    </div>
   );
 };
 
