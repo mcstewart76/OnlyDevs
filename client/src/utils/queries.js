@@ -4,6 +4,7 @@ export const QUERY_GITHUB_USER = gql`
 query GetGitHubUser($githubId: String) {
   getGitHubUser(githubID: $githubId) {
     avatar_url
+    name
     bio
     followers
     following
