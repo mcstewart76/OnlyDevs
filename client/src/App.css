@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 html{
 background-color: #212529;
 }
@@ -109,23 +111,21 @@ background-color: #212529;
 }
 
 .posts{
-  background-color: lightgray;
+  background-color: transparent;
   border-radius:5%;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-bottom: 1.25rem;
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
+ 
   margin-bottom: 1.25rem;
+}
+
+.makingposts{
+  text-decoration: none !important;
+  background-image: linear-gradient(45deg, purple, orange) ;
+  background-clip: text;
+  font-family: 'Bebas Neue', cursive;
+  color: transparent;
 }
 
 .wallstuff{
@@ -140,7 +140,7 @@ background-color: #212529;
 }
 
 .repobox{
-  background-color: slategray;
+  background-color: lightgray;
   box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
     rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px,
@@ -156,7 +156,7 @@ background-color: #212529;
 }
 
 .postbox{
-  background-color: teal;
+  background-color: lightgray;
   box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
     rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px,
@@ -171,8 +171,30 @@ background-color: #212529;
   border-radius: 5%;
 }
 
-Button{
-  padding-bottom: 1.25rem;
+.buttons{
+  margin-bottom: 1.25rem !important;
+  background-color: purple !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttons:hover{
+  margin-bottom: 1.25rem !important;
+  background-color: orange !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttonz{
+  background-color: purple !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttonz:hover{
+  background-color: orange !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
 }
 /* End of Wall Page CSS */
 
@@ -187,12 +209,13 @@ Button{
   text-decoration: none !important;
   background-image: linear-gradient(45deg, purple, orange) ;
   background-clip: text;
+  font-family: 'Bebas Neue', cursive;
   color: transparent;
 }
 
-Link:hover{
-  background-image: linear-gradient(45deg, orange, purple) ;
-  background-clip: text;
-  color: transparent;
+.linx:hover{
+  background-image: linear-gradient(45deg, orange, purple) !important;
+  background-clip: text !important;
+  color: transparent !important;
 }
 /* End of Navbar CSS */
