@@ -10,10 +10,19 @@ query GetGitHubUser($githubId: String) {
     following
     location
   }
-}
+}`;
 
-`
-
+export const QUERY_GITHUB_REPOS = gql`
+query GetGitHubUserRepos($githubId: String) {
+  getGitHubUserRepos(githubID: $githubId) {
+    repos {
+      name
+      language
+      updated_at
+      id
+    }
+  }
+}`;
 
 export const QUERY_USERS = gql`
 query Users {
