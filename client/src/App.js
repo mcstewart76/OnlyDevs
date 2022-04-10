@@ -5,7 +5,6 @@ import { HashRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './pages/';
 import Home from './pages/home';
 import Profile from './pages/profile';
-import Message from './pages/message';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Registration from './pages/Registration';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -25,7 +24,7 @@ return (
 		<Route path='/Registration' element={<Registration />} />
 		<Route path='/home' element={<Home/>} />
     	<Route path='/profile' element={<Profile/>} />
-		<Route path='/message' element={<Message/>} />
+		
 	</Routes>
 	</Router>
 	</ApolloProvider>

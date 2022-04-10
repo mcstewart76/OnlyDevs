@@ -3,27 +3,33 @@
   {
     "userName": "Michael Stewart",
     "email": "ms@gmail.com",
-    "password": "password02"
+    "password": "password02",
+    "gitHubId": "mcstewart76"
+    
   },
   {
     "userName": "kyle Chiu",
     "email": "kc@gmail.com",
-    "password": "password03"
+    "password": "password03",
+    "gitHubId": "kyletchiu"
   },
   {
     "userName": "Michael Kelly",
     "email": "mk@gmail.com",
-    "password": "password04"
+    "password": "password04",
+    "gitHubId": "mikeforge"
   },
   {
     "userName": "Jack Beans",
     "email": "jb@gmail.com",
-    "password": "password05"
+    "password": "password05",
+    "gitHubId": "jack-bartlett"
   },
   {
     "userName": "Ernesto Tham",
     "email": "ernestotha@gmail.com",
-    "password": "password01"
+    "password": "password01",
+    "gitHubId": "ernestotham"
   }
  
 ]

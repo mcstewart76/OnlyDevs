@@ -28,6 +28,11 @@ const emojiSchema = new Schema(
 
 const reactionSchema = new Schema(
     {
+        reactedEmoji: {
+            type: String,
+            required: true,
+        },
+
         postId: {
             type: Schema.Types.ObjectId, ref: 'post',
             
@@ -37,10 +42,7 @@ const reactionSchema = new Schema(
             
         },
 
-        emojisId: 
-        {
-            type: Schema.Types.ObjectId, ref: emojiSchema,
-        },
+        
     },
     {
       toJSON: {
@@ -55,5 +57,8 @@ const reactionSchema = new Schema(
 
   
   const Reaction = model('reaction', reactionSchema);
+   
+  const Emogi = model('emogi', emojiSchema);
   
   module.exports = Reaction;
+  module.exports = Emogi;

@@ -61,3 +61,15 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_GITHUB_REPOS = gql`
+query GetGitHubUserRepos($githubId: String) {
+  getGitHubUserRepos(githubID: $githubId) {
+    repos {
+      name
+      language
+      updated_at
+      id
+    }
+  }
+}`;

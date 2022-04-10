@@ -18,7 +18,7 @@ const Reaction = require('./Reaction');
     },
 
   
-      reactions: [Reaction],
+      reactions: [Reaction.schema],
   
       createdAt: {
         type: Date,
@@ -37,7 +37,7 @@ const Reaction = require('./Reaction');
 
 
 
-  Reaction.virtual('reactionCount').get(function () {
+  Reaction.schema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 
  })

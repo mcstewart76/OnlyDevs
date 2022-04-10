@@ -1,329 +1,95 @@
-html{
-background-color: #212529;
-}
-
 /* Login Page CSS */
 body {
-  background-color:#212529 !important;
-}
-
-.loginform {
-  color: rgb(170, 3, 170);
-  font-size: x-large;
-  background-color: #a8a8a8;
-
-  border-radius: 5%;
-  border: 5px;
-  background: linear-gradient(45deg, purple, orange) 1;
-  /* box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey; */
-
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-  max-width: fit-content;
-}
-
-.libtn {
-  background-color: rgb(170, 3, 170) !important;
-  border: rgb(170, 3, 170) !important;
-}
-
-.libtn:hover {
-  background-color: orange;
-  border: orange;
-  padding: 0.5rem;
-}
-
-.odieIMG {
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center;
-}
-
-/* End of LoginPage CSS */
-
-
-/* Navbar */
-a{
-  text-decoration: none;
-}
-/* End of Navbar */
-
-/* Profile */
-.boxOut{
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-}
-
-.mainLay, .devCard{
-  min-width: none;
-  max-width: 756px;
-}
-.profile-picture{
-  max-width: 450px;
-}
-#propic{
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  min-height: 200px;
-  min-height: 200px;
-  max-height: 200px;
-  max-height: 200px;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 50%;
-  border-color: #7dfdfe;
-  box-shadow: 0 0 10px 2px #7dfdfe;
-}
-
-.biocard{
-  max-width: 300px ;
-}
-<<<<<<< HEAD
-
-.odieIMG{
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center;
-}
-/* End of LoginPage CSS */
-
-/* Wall Page CSS */
-.maincontent{
-  height: 100vh;
-  padding: 1.25rem;
-<<<<<<< HEAD
-=======
-  background-color:  #212529;
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-}
-
-.devs{
-  background-color: lightgray;
-  border-radius:5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-<<<<<<< HEAD
-}
-
-.notifications{
-    background-color: darkgray;
-=======
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-    margin-bottom: 1.25rem;
-}
-
-.notifications{
-    background-color: lightgray;
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-    border-radius:5%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-<<<<<<< HEAD
-=======
+    background-color:#212529 !important;
+  }
+  
+  .loginform {
+    color: rgb(170, 3, 170);
+    font-size: x-large;
+    background-color: #a8a8a8;
+  
+    border-radius: 5%;
+    border: 5px;
+    background: linear-gradient(45deg, purple, orange) 1;
+    /* box-shadow: 1.25rem 1.25rem 1.25rem 1.25rem grey; */
+  
     box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-    margin-bottom: 1.25rem;
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-}
-
-.search{
-  background-color: lightgray;
-  border-radius:5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-<<<<<<< HEAD
-=======
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-    margin-bottom: 1.25rem;
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-}
-
-.wall{
-    border-radius:5%;
-    justify-content: center;
-    align-items: center;
+      rgba(240, 46, 170, 0.3) 10px 10px,
+      rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px,
+      rgba(240, 46, 170, 0.05) 25px 25px,
+      rgba(255, 165, 0, 0.4) -5px -5px,
+      rgba(240, 46, 170, 0.3) -10px -10px,
+      rgba(240, 46, 170, 0.2) -15px -15px,
+      rgba(240, 46, 170, 0.1) -20px -20px,
+      rgba(240, 46, 170, 0.05) -25px -25px;
+    max-width: fit-content;
+  }
+  
+  .libtn {
+    background-color: rgb(170, 3, 170) !important;
+    border: rgb(170, 3, 170) !important;
+  }
+  
+  .libtn:hover {
+    background-color: orange;
+    border: orange;
+    padding: 0.5rem;
+  }
+  
+  .odieIMG {
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center;
-    padding-bottom: 1.25rem;
-<<<<<<< HEAD
-    overflow: scroll;
-=======
-    overflow: hidden;
-    
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-}
-
-.posts{
-  background-color: lightgray;
-  border-radius:5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 1.25rem;
-<<<<<<< HEAD
-}
-
-.wallstuff{
-  border-radius:5%;
-=======
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-  margin-bottom: 1.25rem;
-}
-
-.wallstuff{
-    border-radius:5%;
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 1.25rem;
-    padding-top: 1.25rem;
-<<<<<<< HEAD
-    background-color: darkgray;
-    height: 60vh;
-=======
-    height: 60vh;
-    
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-}
-
-.repobox{
-  background-color: slategray;
-<<<<<<< HEAD
-  border: solid black ;
-}
-
-.postbox{
-background-color: teal;
-  border: solid black ;
-}
-/* End of Wall Page CSS */
-
-/* Profile Page CSS */
-
-/* Some Profile CSS shared with wall page */
-
-.connecteddevs{
-  background-color: darkgray;
-  border-radius:5%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* End of Profile Page CSS */
-=======
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-  margin-bottom: 1.25rem;
-  border-radius: 5%;
-}
-
-.postbox{
-  background-color: teal;
-  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
-    rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px,
-    rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px,
-    rgba(255, 165, 0, 0.4) -5px -5px,
-    rgba(240, 46, 170, 0.3) -10px -10px,
-    rgba(240, 46, 170, 0.2) -15px -15px,
-    rgba(240, 46, 170, 0.1) -20px -20px,
-    rgba(240, 46, 170, 0.05) -25px -25px;
-  margin-bottom: 1.25rem;
-  border-radius: 5%;
-}
-
-Button{
-  padding-bottom: 1.25rem;
-}
-/* End of Wall Page CSS */
-
-/* Navbar CSS */
-
-.linx{
-  align-items: right !important;
-  text-align: right !important;
-  justify-content: right !important;
-  padding-left:.4375rem !important;
-  padding-right: .4375rem !important;
-  text-decoration: none !important;
-  background-image: linear-gradient(45deg, purple, orange) ;
-  background-clip: text;
-  color: transparent;
-}
-
-Link:hover{
-  background-image: linear-gradient(45deg, orange, purple) ;
-  background-clip: text;
-  color: transparent;
-}
-/* End of Navbar CSS */
->>>>>>> 24a72e2a7768d1b665b82eee4455809ae9fc0c79
-=======
-/* End of Profile */
->>>>>>> 0c872016ca815e779cc9010788474553735b7af5
+  }
+  
+  /* End of LoginPage CSS */
+  
+  
+  /* Navbar */
+  a{
+    text-decoration: none;
+  }
+  /* End of Navbar */
+  
+  /* Profile */
+  .boxOut{
+    box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+      rgba(240, 46, 170, 0.3) 10px 10px,
+      rgba(240, 46, 170, 0.2) 15px 15px,
+      rgba(240, 46, 170, 0.1) 20px 20px,
+      rgba(240, 46, 170, 0.05) 25px 25px,
+      rgba(255, 165, 0, 0.4) -5px -5px,
+      rgba(240, 46, 170, 0.3) -10px -10px,
+      rgba(240, 46, 170, 0.2) -15px -15px,
+      rgba(240, 46, 170, 0.1) -20px -20px,
+      rgba(240, 46, 170, 0.05) -25px -25px;
+  }
+  
+  .mainLay, .devCard{
+    min-width: none;
+    max-width: 756px;
+  }
+  .profile-picture{
+    max-width: 450px;
+  }
+  #propic{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    max-height: 200px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #7dfdfe;
+    box-shadow: 0 0 10px 2px #7dfdfe;
+  }
+  
+  .biocard{
+    max-width: 300px ;
+  }
+  /* End of Profile */

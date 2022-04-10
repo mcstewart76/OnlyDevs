@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
-import { QUERY_GITHUB_USER } from '../utils/queries';
+import { QUERY_GITHUB_USER, QUERY_GITHUB_REPOS, QUERY_USERS } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 
 
@@ -9,14 +9,27 @@ const Profile = () => {
   //  const [getGitHubUserState, setGitHubUserState] = useState({
   //   githubId: 'jack-bartlett'});
 
-  const { loading, data } = useQuery(QUERY_GITHUB_USER,
+  var { loading, data } = useQuery(QUERY_GITHUB_USER,
     {
       variables: { githubId: 'mcstewart76' }
     });
-  const p = data?.getGitHubUser || {};
+  const p = data?.getGitHubUser || [];
+
+  console.log(p);
+  
   // variables: {githubId: 'mcstewart'}
   // });
 
+  var { loading, repodata } = useQuery(QUERY_GITHUB_REPOS,
+    {
+      variables: { githubId: 'mcstewart76' }
+    });
+ 
+
+
+  const reposd = repodata?.getGitHubUserRepos.repos || [];
+  console.log(reposd);
+  
 
   // try {
   //   const { data } = trial({
@@ -53,61 +66,18 @@ const Profile = () => {
       </div>
       <div className='mainLay boxOut p-2 d-flex flex-wrap justify-content-center m-4 '>
 
-        <div className=' d-flex justify-content-center flex-wrap px-3'>
-          <Card className='m-2' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+        {reposd.map((repo) => (
 
-            </Card.Body>
-          </Card>
+          <div className=' d-flex justify-content-center flex-wrap px-3'>
+            <Card className='m-2' style={{ width: '18rem' }}>
+              <Card.Body>
+                <Card.Title className='text-dark'>{repo.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
+              </Card.Body>
+            </Card>
+          </div>
 
-          <Card className='m-2' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-
-            </Card.Body>
-          </Card>
-
-        </div>
-        <div className=' d-flex justify-content-center flex-wrap px-3'>
-          <Card className='m-2 ' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-
-            </Card.Body>
-          </Card>
-
-          <Card className='m-2 ' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-
-            </Card.Body>
-          </Card>
-
-        </div>
-        <div className=' d-flex justify-content-center flex-wrap px-3'>
-          <Card className='m-2 ' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-
-            </Card.Body>
-          </Card>
-
-          <Card className='m-2 ' style={{ width: '18rem' }}>
-            <Card.Body>
-              <Card.Title className='text-dark'>Sample Repo</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-
-            </Card.Body>
-          </Card>
-
-        </div>
-
+        ))}
       </div>
 
     </div>

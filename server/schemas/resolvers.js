@@ -42,7 +42,7 @@ const resolvers = {
 
     getGitHubUserRepos:  async (parent, gitHubUserId) => {
      
-      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos`)
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
       return {repos: githubUserRepos.data}
   
   },
