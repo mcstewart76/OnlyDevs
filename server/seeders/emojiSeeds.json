@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Thumbs Up",
+        "emoji": "👍"
+    },
+    {
+        "name": "Red Heart",
+        "emoji": "❤️"
+    },
+    {
+        "name": "Rolling Laugh",
+        "emoji": "🤣"
+    },
+    {
+        "name": "Wow",
+        "emoji": "😯"
+    },
+    {
+        "name":"Sad",
+        "emoji": "😢"
+    },
+    {
+        "name": "Enraged Face",
+        "emoji": "😡"
+    },
+    {
+        "name": "Vomiting Face",
+        "emoji": "🤮"
+    },
+    {
+        "name": "Screaming in Fear Face",
+        "emoji": "😱"
+    },
+    {
+        "name": "Parting Face",
+        "emoji": "🥳"
+    },
+    {
+        "name": "eyes",
+        "emoji": "👀"
+    }
+
+]

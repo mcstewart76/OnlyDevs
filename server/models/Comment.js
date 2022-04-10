@@ -1,34 +1,6 @@
 const { Schema, model } = require('mongoose');
+const Reaction = require('./Reaction');
 
-const reactionSchema = new Schema(
-    {
-      reactionBody: {
-        type: String,
-        required: true,
-        max_length: 280,
-  
-      },
-  
-      userName:
-      {
-        type: String,
-        required: true,
-      },
-  
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: dateFormat
-      },
-    },
-    {
-      toJSON: {
-        virtuals: true,
-        getters: true,
-      },
-      id: false,
-    }
-  );
   
   const commentSchema = new Schema(
     {
@@ -40,13 +12,13 @@ const reactionSchema = new Schema(
   
       },
   
-      userName:
-      {
-        type: String,
-        required: true,
-      },
+      userId: {
+        type: Schema.Types.ObjectId, ref: 'user',
+        required: true 
+    },
+
   
-      reactions: [reactionSchema],
+      reactions: [Reaction],
   
       createdAt: {
         type: Date,
@@ -65,7 +37,7 @@ const reactionSchema = new Schema(
 
 
 
-  commentSchema.virtual('reactionCount').get(function () {
+  Reaction.virtual('reactionCount').get(function () {
     return this.reactions.length;
 
  })
