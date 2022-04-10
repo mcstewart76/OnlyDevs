@@ -9,27 +9,27 @@ const Profile = () => {
   //  const [getGitHubUserState, setGitHubUserState] = useState({
   //   githubId: 'jack-bartlett'});
 
-  var { loading, data } = useQuery(QUERY_GITHUB_USER,
+  const { loading: loading1, data: data1 } = useQuery(QUERY_GITHUB_USER,
     {
-      variables: { githubId: 'mcstewart76' }
+      variables: { githubId: 'ernestotham' }
     });
-  const p = data?.getGitHubUser || [];
+  const p = data1?.getGitHubUser || [];
 
   console.log(p);
-  
+
   // variables: {githubId: 'mcstewart'}
   // });
 
-  var { loading, repodata } = useQuery(QUERY_GITHUB_REPOS,
+  var { loading: loading2, data: data2 } = useQuery(QUERY_GITHUB_REPOS,
     {
-      variables: { githubId: 'mcstewart76' }
+      variables: { githubId: 'ernestotham' }
     });
- 
 
 
-  const reposd = repodata?.getGitHubUserRepos.repos || [];
-  console.log(reposd);
-  
+
+  const reposD = data2?.getGitHubUserRepos.repos || [];
+  console.log(reposD);
+  console.log(reposD.name);
 
   // try {
   //   const { data } = trial({
@@ -64,20 +64,27 @@ const Profile = () => {
         </Card>
 
       </div>
+    
       <div className='mainLay boxOut p-2 d-flex flex-wrap justify-content-center m-4 '>
+        {
+          reposD &&
+          reposD.map((repo) => (
+              
+            <div className=' d-flex justify-content-center flex-wrap px-3'>
+              <Card className='m-2' style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title className='text-dark'>{repo.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{repo.language}</Card.Subtitle>
+                </Card.Body>
+              </Card>
+            </div>
 
-        {reposd.map((repo) => (
+          ))
+          
+        }
 
-          <div className=' d-flex justify-content-center flex-wrap px-3'>
-            <Card className='m-2' style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title className='text-dark'>{repo.name}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Javascript</Card.Subtitle>
-              </Card.Body>
-            </Card>
-          </div>
+          
 
-        ))}
       </div>
 
     </div>
