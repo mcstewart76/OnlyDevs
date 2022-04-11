@@ -45,7 +45,7 @@ const resolvers = {
       // Return if present
 
       // If not there make the request below
-      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos`)
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
 
       // Store that request to the db
       return { repos: githubUserRepos.data }
