@@ -9,26 +9,26 @@ const Profile = () => {
   //  const [getGitHubUserState, setGitHubUserState] = useState({
   //   githubId: 'jack-bartlett'});
 
-  var { loading, data } = useQuery(QUERY_GITHUB_USER,
+  var { loading: loading1, data: data1 } = useQuery(QUERY_GITHUB_USER,
     {
       variables: { githubId: 'mcstewart76' }
     });
-  const p = data?.getGitHubUser || [];
+  const p = data1?.getGitHubUser || [];
 
   console.log(p);
   
   // variables: {githubId: 'mcstewart'}
   // });
 
-  var { loading, repodata, refetch } = useQuery(QUERY_GITHUB_REPOS,
+  var { loading: loading2, data: data2 } = useQuery(QUERY_GITHUB_REPOS,
     {
       variables: { githubId: 'mcstewart76' }
     });
-    refetch();
+    
 
 
-  const reposd = repodata?.getGitHubUserRepos.repos || [];
-  console.log(reposd);
+  const reposD = data2?.getGitHubUserRepos.repos || [];
+  console.log(reposD);
   
 
   // try {
@@ -66,7 +66,7 @@ const Profile = () => {
       </div>
       <div className='mainLay boxOut p-2 d-flex flex-wrap justify-content-center m-4 '>
 
-        {reposd.map((repo) => (
+        {reposD.map((repo) => (
 
           <div className=' d-flex justify-content-center flex-wrap px-3'>
             <Card className='m-2' style={{ width: '18rem' }}>
