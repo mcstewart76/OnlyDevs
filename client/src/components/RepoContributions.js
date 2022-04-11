@@ -4,11 +4,11 @@ import {  QUERY_GITHUB_REPOS} from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import GitHubCalendar from 'react-github-calendar';
 
-export default function RepoContributions(userName) {
+export default function RepoContributions({userName}) {
 
     var {  data } = useQuery(QUERY_GITHUB_REPOS,
         {
-          variables: { githubId: {userName} }
+          variables: { githubId: userName }
         });
 
       const reposD = data?.getGitHubUserRepos.repos || [];
@@ -27,7 +27,7 @@ export default function RepoContributions(userName) {
 
       ))}
       <div className='d-flex mx-auto my-4 border p-4'>
-      <GitHubCalendar username="mcstewart76" color="#eb8517"/>
+      <GitHubCalendar username={userName} color="#ff10f0"/>
       </div>
       </>
   )
