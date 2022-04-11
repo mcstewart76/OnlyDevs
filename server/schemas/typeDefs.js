@@ -2,21 +2,101 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID
-    name: String
-    skills: [String]!
+    id: ID
+    userName: String
+    email: String
+    post: [Post]
+    preferences:[ProfileSettings]
   }
+
+  
+
+  type Post {
+    id: ID
+    title: String
+    description: String
+    postBody: String
+    user: String
+    comments: [Comment]
+    createAt: String
+  }
+
+  type Comment {
+    id: ID
+    commentBody: String
+    user: String
+    reactions: [Comment]
+    createAt: String
+   }
+
+   type ProfileSettings {
+    id: ID
+    user: String
+    skin: String
+    secondaryEmail: String
+   }
+
+   type Auth {
+    token: ID!
+    profile: User
+  }
+
+  type gitHubUser {
+   avatar_url: String
+   bio: String
+   followers: Int
+   following: Int
+   location: String
+   login: String
+   name:  String
+   public_repos: Int
+   url: String
+
+  }
+
+
+  type gitHubUserRepo {
+    id: String
+    name: String
+    language: String
+    updated_at: String
+   
+  }
+
+  type gitHubUserRepos {
+    repos: [gitHubUserRepo]
+
+  }
+
+  
+
 
   type Query {
     users: [User]!
-    user(userId: ID!): User
+    getUserById(_id: ID!): User
+    getUserByEmail(email: String!): User
+    me: User
+    getAllPosts: [Post]
+    getPost(id: ID): Post
+    getGitHubUser(githubID: String):gitHubUser
+    getGitHubUserRepos (githubID: String):gitHubUserRepos
+    
+  }
+
+  input PostInput {
+    title: String
+    description: String
+    user: String
   }
 
   type Mutation {
-    addUser(name: String!): User
-    addSkill(userId: ID!, skill: String!): User
-    removeuser(userId: ID!): User
-    removeSkill(userId: ID!, skill: String!): User
+    addUser(userName: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    removeUser(userId: ID!): User
+    updateUser(userId: ID!): User
+    createPost(post: PostInput): Post
+    deletePost(id: ID): String
+    updatePost(id: ID, post: PostInput): Post
   }
 `;
 
