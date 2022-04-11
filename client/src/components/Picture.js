@@ -3,11 +3,11 @@ import {useQuery} from "@apollo/client"
 import { QUERY_GITHUB_USER } from '../utils/queries';
 import { Card } from 'react-bootstrap';
 
-export default function Picture(userName) {
+export default function Picture({userName}) {
 
     var { data } = useQuery(QUERY_GITHUB_USER,
         {
-          variables: { githubId: {userName}} }
+          variables: { githubId: userName} }
         );
       const p = data?.getGitHubUser || [];
      
