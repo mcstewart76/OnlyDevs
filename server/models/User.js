@@ -8,13 +8,6 @@ const userSchema = new Schema({
     unique: true,
     trim: true,
   },
-  gitHubId: {
-    type: String,
-    required: true,
-    unique: true,
-    
-  },
-
   email: {
     type: String,
     required: true,
