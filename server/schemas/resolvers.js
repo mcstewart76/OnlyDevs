@@ -1,17 +1,21 @@
+
 const { User, Post, Comment } = require('../models');
+const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+const axios = require('axios');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return  await User.find();
+      return await User.find();
     },
 
     getUserById: async (parent, userId) => {
-      const user = await User.findById( userId )
+      const user = await User.findById(userId)
       return user;
     },
     getUserByEmail: async (parent, userEmail) => {
-      const user = await User.findById( userEmail )
+      const user = await User.findById(userEmail)
       return user;
     },
     me: async (parent, args, context) => {
@@ -25,15 +29,33 @@ const resolvers = {
       return await Post.find();
     },
 
-    getPost: async (parent, {id}, context, info) => {
+    getPost: async (parent, { id }, context, info) => {
       return await Post.findById(id)
 
-    }
+    },
+    getGitHubUser: async (parent, gitHubUserId) => {
+
+      const githubUserData = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}`)
+      return githubUserData.data
+    },
+
+    getGitHubUserRepos: async (parent, gitHubUserId) => {
+      // Attempt to hit the db first for this information
+
+      // Return if present
+
+      // If not there make the request below
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
+
+      // Store that request to the db
+      return { repos: githubUserRepos.data }
+    },
+
   },
 
   Mutation: {
-    addUser: async (parent, { name, email, password  }) => {
-      const newUser = await User.create({ name, email, password });
+    addUser: async (parent, { userName, email, password }) => {
+      const newUser = await User.create({ userName, email, password });
       const token = signToken(newUser);
 
       return { token, newUser };
@@ -46,12 +68,12 @@ const resolvers = {
     },
     updateUser: async (parent, params, context) => {
       if (context.user) {
-        return User.findByIdAndUpdate ( context.user._id, {
+        return User.findByIdAndUpdate(context.user._id, {
           name: params.name,
           email: params.email,
-          password: params.password 
-        }, 
-        {new: true});
+          password: params.password
+        },
+          { new: true });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -62,7 +84,7 @@ const resolvers = {
         throw new AuthenticationError('No profile with this email found!');
       }
 
-      const correctPw = await User.isCorrectPassword(password);
+      const correctPw = await userAccount.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
@@ -100,11 +122,11 @@ const resolvers = {
       const post = await Post.findByIdAndUpdate(
         id,
         updates,
-        {new: true}
-        );
+        { new: true }
+      );
       return post
     }
-      },
+  },
 };
 
 module.exports = resolvers;
