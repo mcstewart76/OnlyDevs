@@ -1,27 +1,31 @@
 [
   
   {
-    "userName": "Michael Stewart",
-    "email": "ms@gmail.com",
-    "password": "password02"
+    "userName": "mcstewart76",
+    "email": "mcstewart76@gmail.com",
+    "password": "rotflol"
+   
+    
   },
   {
-    "userName": "kyle Chiu",
+    "userName": "kyletchiu",
     "email": "kc@gmail.com",
     "password": "password03"
+    
   },
   {
-    "userName": "Michael Kelly",
+    "userName": "mikeforge",
     "email": "mk@gmail.com",
     "password": "password04"
+    
   },
   {
-    "userName": "Jack Beans",
+    "userName": "jack-bartlett",
     "email": "jb@gmail.com",
     "password": "password05"
   },
   {
-    "userName": "Ernesto Tham",
+    "userName": "ernestotham",
     "email": "ernestotha@gmail.com",
     "password": "password01"
   }

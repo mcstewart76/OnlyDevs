@@ -3,20 +3,20 @@ const moment = require('moment');
 const Reaction = require('./Reaction');
 const Comment = require('./Comment');
 
-const postSchema = new Schema(
+const repoSchema = new Schema(
   {
-    title: {
+    repoID: {
       type: String,
       required: true,
     },
-    description: {
+    repoName: {
         type: String,
       },
     postBody: {
       type: String,
     },
       
-    userId: {
+    gitHubId: {
         type: Schema.Types.ObjectId, ref: 'user',
         required: true  
     },
@@ -25,7 +25,10 @@ const postSchema = new Schema(
 
     reactions: [Reaction.schema],
 
-      createdAt: {
+    created_at: {
+      type: String,
+    },
+    updated_at: {
       type: Date,
       default: Date.now,
       get: dateFormat

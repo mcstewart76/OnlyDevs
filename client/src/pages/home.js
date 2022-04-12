@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Notifications from '../components/Notifications'
 import ConnectedDevs from '../components/ConnectedDevs'
+import SearchBar from '../components/SearchBar';
+
 const Home = () => {
 
   return (
@@ -16,20 +18,7 @@ const Home = () => {
 
             <Notifications/>
 
-            <div className='search'>
-              <h1 className='makingposts'>Search</h1>
-              <div>
-                <Form>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Find Devs</Form.Label>
-                    <Form.Control placeholder="You type here" />
-                  </Form.Group>
-                  <Button className='buttons' variant="primary" type="submit">
-                    Search
-                  </Button>
-                </Form>
-              </div>
-            </div>
+            <SearchBar userName="mcstewart76"/>
           </Col>
 
           <Col className='wall' sm={8}>

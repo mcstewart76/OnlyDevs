@@ -16,17 +16,34 @@ const typeDefs = gql`
     title: String
     description: String
     postBody: String
-    user: String
+    userId: String
     comments: [Comment]
+    reactions:[Reaction]
     createAt: String
+    reactionCount: Int
   }
 
   type Comment {
     id: ID
     commentBody: String
-    user: String
+    userId: String
     reactions: [Comment]
     createAt: String
+    reactionCount: Int
+   }
+
+   type Reaction {
+    id: ID
+    reactedEmoji: String
+    postId: String
+    commentId: String
+   }
+
+   type Emoji {
+    id: ID
+    emoji: String
+    name: String
+    
    }
 
    type ProfileSettings {
