@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 
 const Home = () => {
+
   return (
     <>
       <Container fluid>
@@ -11,24 +12,24 @@ const Home = () => {
           <Col className='sidebar' sm={4}>
 
             <div className='devs'>
-              <h1>Connected Devs</h1>
+              <h1 className='makingposts'>Connected Devs</h1>
               <div> Dev contacts go here</div>
             </div>
 
             <div className='notifications'>
-              <h1>Notifications</h1>
+              <h1 className='makingposts'>Notifications</h1>
               <div> messages, notification, Devs currently online, or whatever can go here</div>
             </div>
 
             <div className='search'>
-              <h1>Search</h1>
+              <h1 className='makingposts'>Search</h1>
               <div>
                 <Form>
                   <Form.Group className="mb-3">
                     <Form.Label>Find Devs</Form.Label>
                     <Form.Control placeholder="You type here" />
                   </Form.Group>
-                  <Button variant="primary" type="submit">
+                  <Button className='buttons' variant="primary" type="submit">
                     Search
                   </Button>
                 </Form>
@@ -39,14 +40,14 @@ const Home = () => {
           <Col className='wall' sm={8}>
             
             <div className='posts'>
-              <div>
-                <h1>Making posts</h1>
+              <div className='postingbox'>
+                <h1 className='makingposts'>SOMETHING ON YOUR MIND?</h1>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                   <Form.Control as="textarea" rows={3} />
                 </Form.Group>
               </div>
 
-              <Button variant="primary">Post</Button>{' '}
+              <Button className='buttonz' variant="primary">Post</Button>{' '}
             </div>
 
             <div className='wallstuff'>
@@ -59,7 +60,7 @@ const Home = () => {
                     <Form.Group className="mb-3">
                       <Form.Control placeholder="Coment text here" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button className='buttons' variant="primary" type="submit">
                       Comment
                     </Button>
                   </Form>
@@ -75,7 +76,7 @@ const Home = () => {
                     <Form.Group className="mb-3">
                       <Form.Control placeholder="Coment text here" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button className='buttons' variant="primary" type="submit">
                       Comment
                     </Button>
                   </Form>
@@ -91,7 +92,7 @@ const Home = () => {
                     <Form.Group className="mb-3">
                       <Form.Control placeholder="Coment text here" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button className='buttons' variant="primary" type="submit">
                       Comment
                     </Button>
                   </Form>

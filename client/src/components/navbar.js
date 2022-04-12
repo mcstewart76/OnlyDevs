@@ -12,11 +12,11 @@ const Navigation = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Navbar.Brand href="/"><img src={OD} alt='logo'></img></Navbar.Brand>
-            <Nav className="me-auto">
-              <Link className='linx' to= "/">Login/Register</Link>
+            <Nav className="ms-auto">
+              <Link className='linx' to= "/">Login</Link>
+              <Link className='linx' to= "/Registration">Register</Link>
               <Link className='linx' to="/Home">Home</Link>
               <Link className='linx' to="/profile">Profile</Link>
-              <Link className='linx' to="/message">Message</Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

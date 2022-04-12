@@ -24,7 +24,6 @@ return (
 		<Route path='/Registration' element={<Registration />} />
 		<Route path='/home' element={<Home/>} />
     	<Route path='/profile' element={<Profile/>} />
-		
 	</Routes>
 	</Router>
 	</ApolloProvider>
