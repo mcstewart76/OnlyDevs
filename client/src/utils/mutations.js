@@ -40,3 +40,6 @@ export const REMOVE_SKILL = gql`
     }
   }
 `;
+
+export const ADD_POST = gql`
+`

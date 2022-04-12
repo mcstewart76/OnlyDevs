@@ -15,11 +15,10 @@ const typeDefs = gql`
     id: ID
     title: String
     description: String
-    postBody: String
     userId: String
     comments: [Comment]
     reactions:[Reaction]
-    createAt: String
+    createAt: Date
     reactionCount: Int
   }
 
@@ -103,7 +102,7 @@ const typeDefs = gql`
   input PostInput {
     title: String
     description: String
-    user: String
+    userId: String
   }
 
   type Mutation {
