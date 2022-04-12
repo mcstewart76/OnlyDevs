@@ -76,7 +76,7 @@ const resolvers = {
     updateUser: async (parent, params, context) => {
       if (context.user) {
         return User.findByIdAndUpdate(context.user._id, {
-          name: params.name,
+          userName: params.name,
           email: params.email,
           password: params.password
         },
