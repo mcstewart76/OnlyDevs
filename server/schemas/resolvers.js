@@ -20,7 +20,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -51,6 +51,13 @@ const resolvers = {
       return { repos: githubUserRepos.data }
     },
 
+    getGitHubUserRepos:  async (parent, gitHubUserId) => {
+     
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
+      return {repos: githubUserRepos.data}
+  
+  },
+    
   },
 
   Mutation: {
@@ -69,7 +76,7 @@ const resolvers = {
     updateUser: async (parent, params, context) => {
       if (context.user) {
         return User.findByIdAndUpdate(context.user._id, {
-          name: params.name,
+          userName: params.name,
           email: params.email,
           password: params.password
         },

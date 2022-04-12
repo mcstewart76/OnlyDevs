@@ -1,6 +1,7 @@
 const db = require('../config/connection');
-const { User } = require('../models');
+const { User, Emogi } = require('../models');
 const userSeeds = require('./userSeeds.json');
+const emojies = require('./emojiSeeds.json')
 
 db.once('open', async () => {
   try {
@@ -8,6 +9,10 @@ db.once('open', async () => {
     await User.deleteMany({});
 
     await User.create(userSeeds);
+    
+    await Emogi.deleteMany({});
+
+    await Emogi.create(emojies);
 
       
   } catch (err) {

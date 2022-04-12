@@ -1,82 +1,61 @@
 const { Schema, model } = require('mongoose');
+const Reaction = require('./Reaction');
 
-const reactionSchema = new Schema(
-    {
-      reactionBody: {
-        type: String,
-        required: true,
-        max_length: 280,
-  
-      },
-  
-      userName:
-      {
-        type: String,
-        required: true,
-      },
-  
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: dateFormat
-      },
+
+const commentSchema = new Schema(
+  {
+
+    commentBody: {
+      type: String,
+      required: true,
+      max_length: 280,
+
     },
-    {
-      toJSON: {
-        virtuals: true,
-        getters: true,
-      },
-      id: false,
-    }
-  );
-  
-  const commentSchema = new Schema(
-    {
+
+    userId: {
+      type: Schema.Types.ObjectId, ref: 'user',
+      required: true
+    },
+    PostId: {
+      type: Schema.Types.ObjectId, ref: 'post',
       
-      commentBody: {
-        type: String,
-        required: true,
-        max_length: 280,
-  
-      },
-  
-      userName:
-      {
-        type: String,
-        required: true,
-      },
-  
-      reactions: [reactionSchema],
-  
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: dateFormat
-      },
     },
-    {
-      toJSON: {
-        virtuals: true,
-        getters: true,
-      },
-      id: false,
-    }
-  );
+    RepoId: {
+      type: Schema.Types.ObjectId, ref: 'repo',
+      
+    },
 
+    reactions: [Reaction.schema],
 
-
-  commentSchema.virtual('reactionCount').get(function () {
-    return this.reactions.length;
-
- })
-
-  function dateFormat(createdAt) {
-    return moment(createdAt).format('MMM Do, YYYY [at] hh:mm a')
-  
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: dateFormat
+    },
+  },
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true,
+    },
+    id: false,
   }
-  
+);
 
-    
-  const Comment = model('comment', commentSchema);
-  
-  module.exports = Comment;
+
+
+Reaction.schema.virtual('reactionCount').get(function () {
+  return this.reactions.length;
+
+})
+
+function dateFormat(createdAt) {
+  return moment(createdAt).format('MMM Do, YYYY [at] hh:mm a')
+
+}
+
+
+
+const Comment = model('comment', commentSchema);
+
+module.exports = Comment;
