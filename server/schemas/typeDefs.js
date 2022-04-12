@@ -5,7 +5,6 @@ const typeDefs = gql`
     id: ID
     userName: String
     email: String
-    gitHubId: String
     post: [Post]
     preferences:[ProfileSettings]
   }
@@ -40,7 +39,7 @@ const typeDefs = gql`
     commentId: String
    }
 
-   type Emogi {
+   type Emoji {
     id: ID
     emoji: String
     name: String
