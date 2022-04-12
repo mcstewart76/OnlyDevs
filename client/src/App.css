@@ -214,6 +214,10 @@ body {
 /* End of Wall Page CSS */
 
 /* Navbar CSS */
+.nbar{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
 
 .linx{
   align-items: right !important;
@@ -225,6 +229,7 @@ body {
   background-image: linear-gradient(45deg, purple, orange) ;
   background-clip: text;
   font-family: 'Bebas Neue', cursive;
+  font-size: larger !important;
   color: transparent;
 }
 

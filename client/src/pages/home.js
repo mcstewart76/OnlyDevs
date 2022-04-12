@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
-
+import Notifications from '../components/Notifications'
+import ConnectedDevs from '../components/ConnectedDevs'
 const Home = () => {
 
   return (
@@ -11,15 +12,9 @@ const Home = () => {
 
           <Col className='sidebar' sm={4}>
 
-            <div className='devs'>
-              <h1 className='makingposts'>Connected Devs</h1>
-              <div> Dev contacts go here</div>
-            </div>
+            <ConnectedDevs/>
 
-            <div className='notifications'>
-              <h1 className='makingposts'>Notifications</h1>
-              <div> messages, notification, Devs currently online, or whatever can go here</div>
-            </div>
+            <Notifications/>
 
             <div className='search'>
               <h1 className='makingposts'>Search</h1>
@@ -51,7 +46,7 @@ const Home = () => {
             </div>
 
             <div className='wallstuff'>
-              <div className='repobox'>
+              {/* <div className='repobox'>
                 <div className='repocontent'>
                   Repo content here
                 </div>
@@ -65,9 +60,9 @@ const Home = () => {
                     </Button>
                   </Form>
                 </div>
-              </div>
+              </div> */}
 
-              <div className='repobox'>
+              {/* <div className='repobox'>
                 <div>
                   <div className='repocontent'>
                     Repo content here
@@ -81,9 +76,9 @@ const Home = () => {
                     </Button>
                   </Form>
                 </div>
-              </div>
+              </div> */}
 
-              <div className='postbox'>
+              {/* <div className='postbox'>
                 <div>
                   <div className='postcontent'>
                     Post content here
@@ -97,7 +92,7 @@ const Home = () => {
                     </Button>
                   </Form>
                 </div>
-              </div>
+              </div> */}
 
             </div>
 
