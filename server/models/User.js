@@ -1,6 +1,26 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+
+const gitHubFriendSchema = new Schema(
+  {
+    userName:
+    {
+      type: String,
+      required: true,
+    },
+
+  },
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true,
+    },
+    id: false,
+  }
+);
+
+
 const userSchema = new Schema({
   userName: {
     type: String,
@@ -19,6 +39,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+
+  connectedDevs: [gitHubFriendSchema],
+
   post: [
     {
       type: Schema.Types.ObjectId,
@@ -49,6 +72,11 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 
-const User = model('user', userSchema);
+// compare the incoming password with the hashed password
+userSchema.methods.isAddfriend = async function (gitHubId) {
+  return bcrypt.compare(password, this.password);
+};
 
+const User = model('user', userSchema);
 module.exports = User;
+

@@ -3,6 +3,7 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 const Reaction = require('./Reaction');
 const ProfileSetting = require('./ProfileSettings');
-const Emogi = require('./Reaction')
+const Emogi = require('./Reaction');
+const ConnectedDev = require('./ConnectedDev');
 
-module.exports = { User, Post, Comment,ProfileSetting, Reaction, Emogi };
+module.exports = { User, Post, Comment,ProfileSetting, Reaction, Emogi, ConnectedDev };

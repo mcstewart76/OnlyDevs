@@ -1,14 +1,24 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
+type gitHubFriend{
+  gitHubFriend: ID
+  userName: String
+
+}
+
+
   type User {
     id: ID
     userName: String
     email: String
     post: [Post]
+    connectedDevs:[gitHubFriend]
     preferences:[ProfileSettings]
   }
 
+  
   
 
   type Post {
@@ -106,6 +116,7 @@ const typeDefs = gql`
     user: String
   }
 
+
   type Mutation {
     addUser(userName: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
@@ -114,6 +125,7 @@ const typeDefs = gql`
     createPost(post: PostInput): Post
     deletePost(id: ID): String
     updatePost(id: ID, post: PostInput): Post
+    addConnectedDev(userName: String!): User
   }
 `;
 
