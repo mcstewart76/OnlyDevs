@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html{
+background-color: #212529;
+}
+
 /* Login Page CSS */
 body {
   background-color:#212529 !important;
@@ -45,15 +51,19 @@ body {
 
 /* End of LoginPage CSS */
 
-
-/* Navbar */
-a{
-  text-decoration: none;
+/* Wall Page CSS */
+.maincontent{
+  height: 100vh;
+  padding: 1.25rem;
+  background-color:  #212529;
 }
-/* End of Navbar */
 
-/* Profile */
-.boxOut{
+.devs{
+  background-color: lightgray;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
     rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px,
@@ -64,7 +74,168 @@ a{
     rgba(240, 46, 170, 0.2) -15px -15px,
     rgba(240, 46, 170, 0.1) -20px -20px,
     rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
 }
+
+.notifications{
+    background-color: lightgray;
+    border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
+}
+
+.search{
+  background-color: lightgray;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+    margin-bottom: 1.25rem;
+}
+
+.wall{
+    border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.25rem;
+    overflow: hidden;
+    
+}
+
+.posts{
+  background-color: transparent;
+  border-radius:5%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+  margin-bottom: 1.25rem;
+}
+
+.makingposts{
+  text-decoration: none !important;
+  background-image: linear-gradient(45deg, purple, orange) ;
+  background-clip: text;
+  font-family: 'Bebas Neue', cursive;
+  color: transparent;
+}
+
+.wallstuff{
+    border-radius:5%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
+    height: 60vh;
+    
+}
+
+.repobox{
+  background-color: lightgray;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  margin-bottom: 1.25rem;
+  border-radius: 5%;
+}
+
+.postbox{
+  background-color: lightgray;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+  margin-bottom: 1.25rem;
+  border-radius: 5%;
+}
+
+.buttons{
+  margin-bottom: 1.25rem !important;
+  background-color: purple !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttons:hover{
+  margin-bottom: 1.25rem !important;
+  background-color: orange !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttonz{
+  background-color: purple !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.buttonz:hover{
+  background-color: orange !important;
+  border: none !important;
+  font-family: 'Bebas Neue', cursive;
+}
+/* End of Wall Page CSS */
+
+/* Navbar CSS */
+
+.linx{
+  align-items: right !important;
+  text-align: right !important;
+  justify-content: right !important;
+  padding-left:.4375rem !important;
+  padding-right: .4375rem !important;
+  text-decoration: none !important;
+  background-image: linear-gradient(45deg, purple, orange) ;
+  background-clip: text;
+  font-family: 'Bebas Neue', cursive;
+  color: transparent;
+}
+
+.linx:hover{
+  background-image: linear-gradient(45deg, orange, purple) !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+/* End of Navbar CSS */
+
+/* Profile Page CSS */
 
 .mainLay, .devCard{
   min-width: none;
@@ -93,4 +264,4 @@ a{
   max-width: 300px ;
 }
 
-/* End of Profile */
+/* End of Profile Page CSS */ 
