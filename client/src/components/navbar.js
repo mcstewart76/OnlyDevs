@@ -5,7 +5,7 @@ import OD from '../ODNavbar.png'
 
 const Navigation = () => {
   return (
-    <>
+    <> 
       <Navbar className= 'nbar' collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
