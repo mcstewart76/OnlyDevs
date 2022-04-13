@@ -1,8 +1,10 @@
 const { Schema, model } = require('mongoose');
-const moment = require('moment')
+const moment = require('moment');
+const Reaction = require('./Reaction');
+const Comment = require('./Comment');
 
-
-const postSchema = new Schema({
+const postSchema = new Schema(
+  {
     title: {
       type: String,
       required: true,
@@ -15,18 +17,19 @@ const postSchema = new Schema({
     },
       
     userId: {
-        type: Schema.Types.ObjectId, ref: 'user' 
+        type: Schema.Types.ObjectId, ref: 'user',
+        required: true  
     },
 
-    commentId:{
-        type: Schema.Types.ObjectId, ref: 'comment'
+    comments:[Comment.schema],
 
-    },
-    createdAt: {
+    reactions: [Reaction.schema],
+
+      createdAt: {
       type: Date,
       default: Date.now,
       get: dateFormat
-    }
+    },
       
   },
   {
@@ -46,7 +49,16 @@ const postSchema = new Schema({
   
   }
 
+  Reaction.schema.virtual('reactionCount').get(function () {
+    return this.reactions.length;
+
+ })
   
+ Comment.schema.virtual('commentCount').get(function () {
+  return this.comments.length;
+
+})
+
   const Post = model('post', postSchema);
   
   module.exports = Post;
