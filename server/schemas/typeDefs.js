@@ -1,9 +1,9 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+scalar Date
 
 type gitHubFriend{
-  gitHubFriend: ID
   userName: String
 
 }
@@ -29,7 +29,7 @@ type gitHubFriend{
     userId: String
     comments: [Comment]
     reactions:[Reaction]
-    createAt: String
+    createAt: Date
     reactionCount: Int
   }
 
@@ -113,7 +113,7 @@ type gitHubFriend{
   input PostInput {
     title: String
     description: String
-    user: String
+    userId: String
   }
 
 

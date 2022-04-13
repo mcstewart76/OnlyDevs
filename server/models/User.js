@@ -72,10 +72,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 
-// compare the incoming password with the hashed password
-userSchema.methods.isAddfriend = async function (gitHubId) {
-  return bcrypt.compare(password, this.password);
-};
 
 const User = model('user', userSchema);
 module.exports = User;

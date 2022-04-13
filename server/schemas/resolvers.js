@@ -32,9 +32,11 @@ const resolvers = {
     },
 
     getPost: async (parent, { id }, context, info) => {
-      return await Post.findById(id)
+      const PostData = await Post.findById(id);
 
+      return PostData
     },
+    
     getGitHubUser: async (parent, gitHubUserId) => {
 
       const githubUserData = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}`)
@@ -73,8 +75,8 @@ const resolvers = {
       if (context.user) {
         return await User.findByIdAndUpdate(
           context.user._id ,
-          {$addToSet: {connectedDevs: {params}}},
-          { runValidators: false, new: true },
+          {$addToSet: {connectedDevs: {userName: params.userName}}},
+          { runValidators: true, new: true },
  
          );
       }
