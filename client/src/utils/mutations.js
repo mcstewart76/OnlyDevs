@@ -24,8 +24,8 @@ export const LOGIN_USER = gql`
     login(email: $email, password: $password) {
       token
       profile {
-        _id
-        name
+        id
+        userName
       }
     }
   }
