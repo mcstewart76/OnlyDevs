@@ -37,13 +37,19 @@ query GetUserById($id: ID!) {
 `;
 
 export const QUERY_ALL_POSTS = gql`
-query GetPost {
+query Query {
   getAllPosts {
     id
     title
     description
-    postBody
-    user
+    userId
+    comments {
+      id
+      commentBody
+      userId
+      createAt
+    }
+    createAt
   }
 }
 `;

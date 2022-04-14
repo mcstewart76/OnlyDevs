@@ -18,7 +18,7 @@ const typeDefs = gql`
     userId: String
     comments: [Comment]
     reactions:[Reaction]
-    createAt: Date
+    createAt: String 
     reactionCount: Int
   }
 
