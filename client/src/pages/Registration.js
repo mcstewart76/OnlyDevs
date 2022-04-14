@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import Odie from '../OdieLogo2.0.png'
 import { ADD_USER } from '../utils/mutations'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import auth from '../utils/auth';
 
@@ -16,7 +16,7 @@ const Registration = () => {
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
-
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,6 +37,7 @@ const Registration = () => {
       });
 
       auth.login(data.addUser.token);
+      navigate("/home");
     } catch (e) {
       console.error(e);
     }
@@ -49,12 +50,15 @@ const Registration = () => {
         <div className='d-flex justify-content-center mx-4 bg-dark'>
           <div className='loginform my-5 row p-4 align-items-center justify-content-center'>
             <img className='odieIMG' src={Odie} alt="OdieTheDev" />
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the Login Page.</Link>
-              </p>
-            ) : (
+            {
+            // data ? (
+            //   <p>
+            //     Success! You may now head{' '}
+               
+            //     {navigate("/home")}
+            //   </p>
+            // ) : 
+            // (
             <Form className='formaspects px-2 mx-2' onSubmit={handleFormSubmit}>
               <Form.Group className="mb-2" controlId="formUsername">
                 <Form.Label>Username</Form.Label>
@@ -78,7 +82,9 @@ const Registration = () => {
                 Create Account
               </Button>
             </Form>
-            )}
+            // )
+            
+            }
 
               {error && (
                 console.error(error.message)
