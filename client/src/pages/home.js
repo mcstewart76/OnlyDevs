@@ -1,10 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import Posts from '../components/Posts';
 import Notifications from '../components/Notifications'
 import ConnectedDevs from '../components/ConnectedDevs'
 import SearchBar from '../components/SearchBar';
+import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
-import { Link } from 'react-router-dom'
+
 
 const Home = () => {
 
@@ -25,21 +27,14 @@ const Home = () => {
 
                 <Notifications />
 
-                <SearchBar userName="mcstewart76" />
-              </Col>
+            <SearchBar userName="mcstewart76" />
+          </Col>
 
-              <Col className='wall' sm={8}>
+          <Col className='wall' sm={8}>
 
-                <div className='posts'>
-                  <div className='postingbox'>
-                    <h1 className='makingposts'>SOMETHING ON YOUR MIND?</h1>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                      <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                  </div>
+            <Posts />
 
-                  <Button className='buttonz' variant="primary">Post</Button>{' '}
-                </div>
+
 
                 <div className='wallstuff'>
                   {/* <div className='repobox'>
@@ -74,7 +69,8 @@ const Home = () => {
                 </div>
               </div> */}
 
-                  {/* <div className='postbox'>
+              <PostedContent />  
+              {/* <div className='postbox'>
                 <div>
                   <div className='postcontent'>
                     Post content here

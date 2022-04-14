@@ -25,11 +25,10 @@ type gitHubFriend{
     id: ID
     title: String
     description: String
-    postBody: String
     userId: String
     comments: [Comment]
     reactions:[Reaction]
-    createAt: Date
+    createAt: String 
     reactionCount: Int
   }
 
