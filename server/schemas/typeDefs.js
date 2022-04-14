@@ -1,14 +1,24 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+scalar Date
+
+type gitHubFriend{
+  userName: String
+
+}
+
+
   type User {
     id: ID
     userName: String
     email: String
     post: [Post]
+    connectedDevs:[gitHubFriend]
     preferences:[ProfileSettings]
   }
 
+  
   
 
   type Post {
@@ -19,7 +29,7 @@ const typeDefs = gql`
     userId: String
     comments: [Comment]
     reactions:[Reaction]
-    createAt: String
+    createAt: Date
     reactionCount: Int
   }
 
@@ -103,8 +113,9 @@ const typeDefs = gql`
   input PostInput {
     title: String
     description: String
-    user: String
+    userId: String
   }
+
 
   type Mutation {
     addUser(userName: String!, email: String!, password: String!): Auth
@@ -114,6 +125,7 @@ const typeDefs = gql`
     createPost(post: PostInput): Post
     deletePost(id: ID): String
     updatePost(id: ID, post: PostInput): Post
+    addConnectedDev(userName: String!): User
   }
 `;
 
