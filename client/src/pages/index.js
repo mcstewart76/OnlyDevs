@@ -3,6 +3,7 @@ import { Form, Button} from 'react-bootstrap'
 import Odie from '../OdieLogo2.0.png'
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom'
 
 import auth from '../utils/auth';
 
@@ -44,14 +45,20 @@ const Login = (props) => {
 
   return (
     <>
-      <body >
+      <div>
         <div className='d-flex justify-content-center mx-4 bg-dark'>
         <div className='loginform my-5 row p-4 align-items-center justify-content-center'>
           <img className='odieIMG' src={Odie} alt="OdieTheDev" />
+          {data ? (
+              <p>
+                Success! You may now enter{' '}
+                <Link to="/home">Homepage.</Link>
+              </p>
+            ) : (
           <Form className='formaspects px-2 mx-2' onSubmit={handleFormSubmit}>
             <Form.Group className="mb-3" controlId="formUsername">
-              <Form.Label>Username</Form.Label>
-              <Form.Control type="username" placeholder="Username" onChange={handleChange} />
+              <Form.Label>Email</Form.Label>
+              <Form.Control name="email" type="email" placeholder="Email" onChange={handleChange} />
               <Form.Text className="text-muted">
 
               </Form.Text>
@@ -59,15 +66,21 @@ const Login = (props) => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" onChange={handleChange} />
+              <Form.Control name="password" type="password" placeholder="Password" onChange={handleChange} />
             </Form.Group>
             <Button className='libtn ' variant="primary" type="submit">
               Login
             </Button>
           </Form>
+          )}
+
+          {error && (
+            console.error(error.message)
+            
+          )}
         </div>
         </div>
-      </body>
+      </div>
     </>
   );
 };
