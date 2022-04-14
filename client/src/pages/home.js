@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
 
-  const currentuser= auth.getUser()
+// const currentuser= auth.getUser()
 
   return (
     <>
@@ -25,7 +25,7 @@ const Home = () => {
 
                 <Notifications />
 
-                <SearchBar userName={currentuser.data.userName} />
+                <SearchBar userName="mcstewart76" />
               </Col>
 
               <Col className='wall' sm={8}>
