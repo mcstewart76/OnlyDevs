@@ -25,14 +25,18 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
+    
+
     getAllPosts: async () => {
       return await Post.find();
     },
 
     getPost: async (parent, { id }, context, info) => {
-      return await Post.findById(id)
+      const PostData = await Post.findById(id);
 
+      return PostData
     },
+    
     getGitHubUser: async (parent, gitHubUserId) => {
 
       const githubUserData = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}`)
@@ -67,6 +71,21 @@ const resolvers = {
 
       return { token, newUser };
     },
+    addConnectedDev: async (parent, params, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(
+          context.user._id ,
+          {$addToSet: {connectedDevs: {userName: params.userName}}},
+          { runValidators: true, new: true },
+ 
+         );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+
+
+
     removeUser: async (parent, args, context) => {
       if (context.user) {
         return User.findOneAndDelete({ _id: context.user._id });

@@ -3,7 +3,7 @@ import { Form, Button} from 'react-bootstrap'
 import Odie from '../OdieLogo2.0.png'
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 
 import auth from '../utils/auth';
 
@@ -11,7 +11,7 @@ import auth from '../utils/auth';
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
-
+  const navigate = useNavigate();
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,6 +32,7 @@ const Login = (props) => {
       });
 
       auth.login(data.login.token);
+      // navigate("/home")
     } catch (e) {
       console.error(e);
     }
@@ -49,10 +50,13 @@ const Login = (props) => {
         <div className='d-flex justify-content-center mx-4 bg-dark'>
         <div className='loginform my-5 row p-4 align-items-center justify-content-center'>
           <img className='odieIMG' src={Odie} alt="OdieTheDev" />
-          {data ? (
+          {
+          data ? (
               <p>
                 Success! You may now enter{' '}
-                <Link to="/home">Homepage.</Link>
+                <Link to="/">Homepage.</Link>
+                {/* {navigate("/home")} */}
+                {/* <Navigate to="/home" replace={true} /> */}
               </p>
             ) : (
           <Form className='formaspects px-2 mx-2' onSubmit={handleFormSubmit}>
@@ -83,6 +87,10 @@ const Login = (props) => {
       </div>
     </>
   );
+
+
+
+ 
 };
 
 export default Login;
