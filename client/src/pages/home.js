@@ -1,24 +1,31 @@
 import React from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Posts from '../components/Posts';
 import Notifications from '../components/Notifications'
 import ConnectedDevs from '../components/ConnectedDevs'
 import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
+import auth from '../utils/auth';
+
 
 const Home = () => {
+
+// const currentuser= auth.getUser()
 
   return (
     <>
       <Container fluid>
 
-        <Row className='maincontent'>
 
-          <Col className='sidebar' sm={4}>
+        {auth.loggedIn() ?
+          (
+            <Row className='maincontent'>
 
-            <ConnectedDevs/>
+              <Col className='sidebar' sm={4}>
 
-            <Notifications/>
+                <ConnectedDevs />
+
+                <Notifications />
 
             <SearchBar userName="mcstewart76" />
           </Col>
@@ -29,8 +36,8 @@ const Home = () => {
 
 
 
-            <div className='wallstuff'>
-              {/* <div className='repobox'>
+                <div className='wallstuff'>
+                  {/* <div className='repobox'>
                 <div className='repocontent'>
                   Repo content here
                 </div>
@@ -46,7 +53,7 @@ const Home = () => {
                 </div>
               </div> */}
 
-              {/* <div className='repobox'>
+                  {/* <div className='repobox'>
                 <div>
                   <div className='repocontent'>
                     Repo content here
@@ -79,11 +86,32 @@ const Home = () => {
                 </div>
               </div> */}
 
-            </div>
+                </div>
 
-          </Col>
+              </Col>
 
-        </Row>
+            </Row>
+
+          ) : (
+
+            <Row className='maincontent'>
+
+              <Col className='d-flex justify-content-center mx-4 bg-dark'>
+
+              <p className='text-light'>
+                You need to be logged on !!!
+                
+              </p>
+
+               
+              </Col>
+
+             
+            </Row>
+
+          )}
+
+
 
       </Container>
 
