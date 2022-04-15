@@ -94,6 +94,24 @@ type gitHubFriend{
 
   }
 
+  type gitHubUserRepoReadMe {
+    repoReadMe: String
+
+  }
+  
+  type repoData {
+    
+    gitHubUserID: String
+    repoName: String
+    repoUrl: String
+    repoReadMe: String
+  
+  }
+
+  type gitHubUserRepoReadMes {
+    repoReadMes: [repoData]
+
+  }
   
 
 
@@ -106,7 +124,8 @@ type gitHubFriend{
     getPost(id: ID): Post
     getGitHubUser(githubID: String):gitHubUser
     getGitHubUserRepos (githubID: String):gitHubUserRepos
-    
+    getGitHubUserRepoReadMe (githubID: String, repo: String, branch: String):gitHubUserRepoReadMe
+    getGitHubUserRepoReadMes (githubID: String):gitHubUserRepoReadMes
   }
 
   input PostInput {

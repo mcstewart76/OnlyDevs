@@ -44,8 +44,9 @@ export const REMOVE_SKILL = gql`
 export const ADD_POST = gql`
 mutation Mutation($post: PostInput) {
   createPost(post: $post) {
-    title
     description
+    title
+    userId
   }
 }
 `

@@ -60,7 +60,7 @@ export const QUERY_ME = gql`
     me {
       _id
       name
-      skills
+     
     }
   }
 `;
@@ -76,3 +76,31 @@ query GetGitHubUserRepos($githubId: String) {
     }
   }
 }`;
+
+export const QUERY_GITHUB_REPO_FOR_USER = gql`
+query GetGitHubUserRepoReadMes($githubId: String) {
+  getGitHubUserRepoReadMes(githubID: $githubId) {
+    repoReadMes {
+      gitHubUserID
+      repoName
+      repoUrl
+      repoReadMe
+    }
+  }
+}
+
+`;
+
+export const QUERY_CONNECTEDDEVS = gql`
+query GetUserById($id: ID!) {
+  getUserById(_id: $id) {
+    id
+    userName
+    connectedDevs
+    
+  
+  }
+ 
+}
+
+`;
