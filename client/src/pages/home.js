@@ -24,7 +24,7 @@ const Home = () => {
 
               <Col className='sidebar' sm={4}>
 
-                {/* <ConnectedDevs /> */}
+                <ConnectedDevs />
 
                 <Notifications />
 
