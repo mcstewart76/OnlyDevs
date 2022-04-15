@@ -35,7 +35,7 @@ const Home = () => {
 
             <Posts />
 
-                <div className='wallstuff'>
+                <div className='wallstuff  px-4'>
                   {/* <div className='repobox'>
                 <div className='repocontent'>
                   Repo content here
