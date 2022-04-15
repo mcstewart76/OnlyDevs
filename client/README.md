@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# OnlyDevs
+![GitHub license](http://img.shields.io/badge/license-MIT-green)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+OnlyDavs is a great way for developers to connect and collaberate. This app allows likeminded devs to compare and contrast eachother's work, as well as plan out future projects. It is the successor of the gitHommies app that was the paved the way for this project. With OnlyDevs you can view other developers repos, share your own, and post about the hot tech topics of the day. Welcome to the future of developer collaberation.
 
-## Available Scripts
+## Table of Contents
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributors](#Contributors)
+* [Tests](#Tests)
+* [Questions](Questions)
+* [Github](#Github)
+* [Email](#Email)
+* [License](#License)
+* [Repo](#Repo)
 
-In the project directory, you can run:
+## Installation
+There is now need to install this app due to it being a live social network. If you have approval to contribute to the code, your system must be able to run a react server. You will also need to do an npm install to ensure all dependencies are on your system.
 
-### `npm start`
+## Usage
+OnlyDevs is meant to be used to link developers around the world. 
+## Contributing
+Contributing is at the discretion of the gitHomies team.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tests
+N/A
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Questions
+Please direct all questions to the gitHomies team via email or social media
+## Github
+mcstewart76, KYLETCHIU, ernestotham, mikeforge, jack-bartlett
 
-### `npm test`
+## Email
+ mcstewart76@gmail.com, kyletchiu@gmail.com, ernestotha@gmail.com, jackbartlettengineering@gmail.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## License
+ MIT 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Repo
+https://github.com/mcstewart76/OnlyDevs
