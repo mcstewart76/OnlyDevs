@@ -7,45 +7,80 @@ import { DebounceInput } from 'react-debounce-input';
 
 
 export default function SearchBar() {
-  //     state = {
-  //         value: ''
-  //       };
-  //    const textboxEl = useRef(null);
-  //    const textbox =textboxEl.current;
-  //    console.log(textbox)
-  // var { data } = useQuery(QUERY_GITHUB_USER,
-  //     {
-  //       variables: { githubId: textbox} }
-  //     );
-  //   const p = data?.getGitHubUser || [];
+  // const [formState, setFormState] = useState({ email: '', password: '' });
+  // const [getGitHubUser, { error, data }] = useQuery(QUERY_GITHUB_USER);
+  // const navigate = useNavigate();
+  // // update state based on form input changes
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+    
+  //   setFormState({
+  //     ...formState,
+  //     [name]: value,
+  //   });
+  // };
 
+  // // submit form
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   console.log(formState);
+  //   try {
+  //     const { data } = await getGitHubUser({
+  //       variables: { ...formState },
+  //     });
 
+      
+  //     // navigate("/home")
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
 
-  //   var friendbtn = `<button  class="btn btn-link btn-sm homie-found mx-auto justify-content-center m-2 ${login_name}">${login_name}</button>`
-  //   var addFriend = ` <button class="btn btn-link btn-sm add-friend mx-auto justify-content-center">+</button>`
+  //   // clear form values
+  //   setFormState({
+  //     email: '',
+  //     password: '',
+  //   });
+  // };
 
+  const [searchFriend, setSearchFriend] = useState([
+    {friend: ""},
+    
+
+]);
 
   return (
     <div className='search p-2'>
       <div className='searchbox'>
         <h1 className='makingposts'>Search</h1>
         <div>
-          <Form>
+          <Form >
             <Form.Group className="mb-3 px-3">
               <Form.Label>Find Devs</Form.Label>
               <DebounceInput
                 minLength={2}
                 debounceTimeout={300}
-                onChange={event => this.setState({ value: event.target.value })}
+                
                 element={Form.Control}
                 placeholder="Find by GitHub Username"
 
               />
               <Button className='usernamebtn'></Button>
             </Form.Group>
-            <Button id="SearchBtn" className="buttons" variant="primary" type="submit">
+            <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={e => console.log(e.target.value)} text="Search">
               Search
             </Button >
+            {searchFriend.map((singleFriend, index) => (
+              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit">
+              Friend Button
+            </Button >
+           
+            
+            
+            ))}{searchFriend.length > 1 && (
+              <Button id="SearchBtn"  className="buttons" variant="primary" type="submit">
+          Add Friend Button
+        </Button >   
+            )}
           </Form>
         </div>
       </div>
