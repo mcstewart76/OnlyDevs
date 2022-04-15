@@ -12,18 +12,19 @@ export default function UserPostedContent({ userName }) {
         });
 
     const UserPostedContent = data?.getAllPosts || [];
-
+    let counter = 0;
 
     return (
         <>
             {UserPostedContent.map((post) => (
-                <div className='postbox'>
-                    <div>
-                        <div className='postcontent'>
+                
+                <div key = {counter++} className='postbox'>
+                    <div key = {counter++}>
+                        <div key = {counter++} className='postcontent'>
                             {post.title}
                         </div>
 
-                        <div>
+                        <div key = {counter++}>
                             {post.description}
                         </div>
                     </div>
