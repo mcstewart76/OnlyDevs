@@ -1,75 +1,41 @@
 import React, { useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
-import { useQuery } from "@apollo/client"
-import { QUERY_GITHUB_USER } from '../utils/queries';
+// import { useQuery } from "@apollo/client"
+// import { QUERY_GITHUB_USER } from '../utils/queries';
 
 import { DebounceInput } from 'react-debounce-input';
-import { ADD_CONNECTED_DEV } from '../utils/mutations';
+// import { ADD_CONNECTED_DEV } from '../utils/mutations';
 
 
 export default function SearchBar() {
-  // const [formState, setFormState] = useState({ email: '', password: '' });
-  // const [getGitHubUser, { error, data }] = useQuery(QUERY_GITHUB_USER);
-  // const navigate = useNavigate();
-  // // update state based on form input changes
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-    
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
 
-  // // submit form
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   console.log(formState);
-  //   try {
-  //     const { data } = await getGitHubUser({
-  //       variables: { ...formState },
-  //     });
 
-      
-  //     // navigate("/home")
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
+//   const handleFriend = async (event) => {
+//     event.preventDefault();
+//     console.log(formState);
+//     try {
+//       const { data } = await login({
+//         variables: { ...formState },
+//       });
 
-  //   // clear form values
-  //   setFormState({
-  //     email: '',
-  //     password: '',
-  //   });
-  // };
- 
+//       // navigate("/home")
+//     } catch (e) {
+//       console.error(e);
+//     } 
+//   };
 
-  const handleFriend = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
-
-      // navigate("/home")
-    } catch (e) {
-      console.error(e);
-    } 
-  };
-
- const handleAddFriend = async (event) => {
-    event.preventDefault();
+//  const handleAddFriend = async (event) => {
+//     event.preventDefault();
    
-    try {
-      const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
-      }
+//     try {
+//      // const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
+//       }
 
-      // navigate("/home")
-     catch (e) {
-      console.error(e);
-    } 
-  };
+//       // navigate("/home")
+//      catch (e) {
+//       console.error(e);
+//     } 
+//   };
 
 
   const [searchFriend, setSearchFriend] = useState([
