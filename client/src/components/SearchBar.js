@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client"
 import { QUERY_GITHUB_USER } from '../utils/queries';
 
 import { DebounceInput } from 'react-debounce-input';
+import { ADD_CONNECTED_DEV } from '../utils/mutations';
 
 
 export default function SearchBar() {
@@ -41,6 +42,35 @@ export default function SearchBar() {
   //     password: '',
   //   });
   // };
+ 
+
+  const handleFriend = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      // navigate("/home")
+    } catch (e) {
+      console.error(e);
+    } 
+  };
+
+ const handleAddFriend = async (event) => {
+    event.preventDefault();
+   
+    try {
+      const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
+      }
+
+      // navigate("/home")
+     catch (e) {
+      console.error(e);
+    } 
+  };
+
 
   const [searchFriend, setSearchFriend] = useState([
     {friend: ""},
@@ -69,19 +99,20 @@ export default function SearchBar() {
             <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={e => console.log(e.target.value)} text="Search">
               Search
             </Button >
+            </Form>
             {searchFriend.map((singleFriend, index) => (
-              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit">
-              Friend Button
+              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit "  onClick={handleFriend}>
+              Friend Name
             </Button >
            
             
             
             ))}{searchFriend.length > 1 && (
-              <Button id="SearchBtn"  className="buttons" variant="primary" type="submit">
+              <Button id="SearchBtn"  className="buttons" variant="primary" type="submit" onClick={handleAddFriend}>
           Add Friend Button
         </Button >   
             )}
-          </Form>
+          
         </div>
       </div>
     </div>
