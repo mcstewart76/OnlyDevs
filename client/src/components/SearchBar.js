@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
-// import { useQuery } from "@apollo/client"
+ import { useMutation } from "@apollo/client"
 // import { QUERY_GITHUB_USER } from '../utils/queries';
 
 import { DebounceInput } from 'react-debounce-input';
-// import { ADD_CONNECTED_DEV } from '../utils/mutations';
+ import { ADD_CONNECTED_DEV } from '../utils/mutations';
 
 
 export default function SearchBar() {
@@ -24,26 +24,41 @@ export default function SearchBar() {
 //     } 
 //   };
 
-//  const handleAddFriend = async (event) => {
-//     event.preventDefault();
-   
-//     try {
-//      // const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
-//       }
 
-//       // navigate("/home")
-//      catch (e) {
-//       console.error(e);
-//     } 
-//   };
+ const handleAddFriend = async (event) => {
+    event.preventDefault();
+    
+    try {
+     
+     const { data } = await addConnectedDev({
+  variables: {userName: formState.userName },
+      })
+      console.log(data);
+    }
 
-
-  const [searchFriend, setSearchFriend] = useState([
+      // navigate("/home")
+     catch (e) {
+      console.error(e);
+    } 
+  };
+const [searchFriend, setSearchFriend] = useState([
     {friend: ""},
     
 
 ]);
+const handleChange = (event) => {
+  const { name, value } = event.target;
 
+  setFormState({
+    ...formState,
+    [name]: value,
+  });
+};
+  const [formState, setFormState] = useState({userName:""});
+
+  const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
+
+  
   return (
     <div className='search p-2'>
       <div className='searchbox'>
@@ -55,9 +70,12 @@ export default function SearchBar() {
               <DebounceInput
                 minLength={2}
                 debounceTimeout={300}
-                
+                onChange={handleChange}
                 element={Form.Control}
                 placeholder="Find by GitHub Username"
+                name="userName"
+                type="userName"
+                value={formState.userName}
 
               />
               <Button className='usernamebtn'></Button>
@@ -67,7 +85,7 @@ export default function SearchBar() {
             </Button >
             </Form>
             {searchFriend.map((singleFriend, index) => (
-              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit "  onClick={handleFriend}>
+              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit "  >
               Friend Name
             </Button >
            
