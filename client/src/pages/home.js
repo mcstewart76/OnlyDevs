@@ -28,7 +28,7 @@ const Home = () => {
 
                 <Notifications />
 
-            <SearchBar userName="mcstewart76" />
+            {/* <SearchBar userName="mcstewart76" /> */}
           </Col>
 
           <Col className='wall' sm={8}>
