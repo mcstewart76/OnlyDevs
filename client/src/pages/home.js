@@ -86,7 +86,7 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
- <PostedContent />  
+
                 </div>
 
               </Col>
