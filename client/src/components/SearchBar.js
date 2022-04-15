@@ -58,6 +58,26 @@ const handleChange = (event) => {
 
   const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
 
+  const handleSearchSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await addPost({
+        variables: {
+            post:{
+            title:formState.title, 
+            description: formState.description,
+            userId:formState.userId}} ,
+
+        // {variables: { githubId: userName} }
+
+      });
+      window.location.reload();
+    //   auth.login(data.login.token);
+      // navigate("/home")
+    } catch (e) {
+      console.error(e);
+    }
   
   return (
     <div className='search p-2'>
@@ -80,7 +100,7 @@ const handleChange = (event) => {
               />
               <Button className='usernamebtn'></Button>
             </Form.Group>
-            <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={e => console.log(e.target.value)} text="Search">
+            <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={handleSearchSubmit} text="Search">
               Search
             </Button >
             </Form>

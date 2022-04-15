@@ -9,6 +9,7 @@ query GetGitHubUser($githubId: String) {
     followers
     following
     location
+    login
   }
 }`;
 
