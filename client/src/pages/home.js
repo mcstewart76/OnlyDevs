@@ -6,6 +6,7 @@ import ConnectedDevs from '../components/ConnectedDevs'
 import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
+import {Navigate} from "react-router-dom";
 
 
 const Home = () => {
@@ -19,11 +20,11 @@ const Home = () => {
 
         {auth.loggedIn() ?
           (
-            <Row className='maincontent'>
+            <Row className='maincontent' sm={4}>
 
               <Col className='sidebar' sm={4}>
 
-                <ConnectedDevs />
+                {/* <ConnectedDevs /> */}
 
                 <Notifications />
 
@@ -85,7 +86,7 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
-
+ <PostedContent />  
                 </div>
 
               </Col>
@@ -99,7 +100,10 @@ const Home = () => {
               <Col className='d-flex justify-content-center mx-4 bg-dark'>
 
               <p className='text-light'>
-                You need to be logged on !!!
+
+              {setTimeout("You need to be logged on !!!", 5000)}
+                              
+              <Navigate replace to="/login" />
                 
               </p>
 
