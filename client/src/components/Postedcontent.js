@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Button, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useQuery } from "@apollo/client"
 import { QUERY_ALL_POSTS } from '../utils/queries';
 
