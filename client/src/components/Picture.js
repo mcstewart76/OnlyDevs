@@ -14,16 +14,19 @@ export default function Picture({userName}) {
       console.log(p);
   return (
     
-      <div className='sidebarLay boxOut d-flex m-4'>
-        <Card >
+      <div className='sidebarLay rounded boxOut d-flex m-4'>
+        <Card className='profilecard' >
           <Card.Body>
-            <div className='devCard text-dark p-2 '>
-              <div className='profile '>
-                <div className="profile-picture d-flex">
+            <div className='devCard text-dark p-2'>
+              <div className='profile'>
+                <div className="profile-picture d-flex mx-auto">
                   <img id="propic" src={p.avatar_url} alt="profilepicture" className="rounded-circle rounded mx-auto d-block"></img>
                 </div>
-                <Card.Title className='text-dark d-flex'> {p.name} </Card.Title>
-                <Card.Subtitle className="mb-2 text-muted d-flex">{p.bio}</Card.Subtitle>
+                <Card.Title className='biotitle d-flex'> {p.name} </Card.Title>
+                <Card.Subtitle className="biosubtitle mx-auto d-flex">{p.bio}</Card.Subtitle>
+                <div className='followersfollowing'>
+                <p> Followers:  {p.followers}   ·   Following:  {p.following}</p> 
+                </div>
               </div>
               <div className="biocard p-3 " >
               </div>
