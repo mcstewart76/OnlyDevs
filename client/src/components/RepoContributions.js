@@ -16,7 +16,7 @@ export default function RepoContributions({userName}) {
       <>
     {reposD.map((repo) => (
 
-        <div className=' d-flex justify-content-center flex-wrap px-3'>
+        <div className='d-flex justify-content-center flex-wrap px-3'>
           <Card className='m-2' style={{ width: '18rem' }}>
             <Card.Body>
               <Card.Title className='text-dark'>{repo.name}</Card.Title>

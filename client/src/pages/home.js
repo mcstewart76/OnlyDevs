@@ -10,8 +10,14 @@ import {Navigate} from "react-router-dom";
 
 
 const Home = () => {
+
+ try {
   const currentUser= auth.getUser();
-// const currentuser= auth.getUser()
+ } catch (error) {
+   
+ }
+  
+//  const currentuser= auth.getUser()
 
   return (
     <>
@@ -28,7 +34,7 @@ const Home = () => {
 
                 <Notifications />
 
-            <SearchBar userName={currentUser.data.userName} />
+            {/* <SearchBar userName={currentUser.data.userName} /> */}
           </Col>
 
           <Col className='wall' sm={8}>
@@ -98,7 +104,7 @@ const Home = () => {
 
               <p className='text-light'>
 
-              {setTimeout("You need to be logged on !!!", 5000)}
+              {/* {setTimeout("You need to be logged on !!!", 5000)} */}
                               
               <Navigate replace to="/login" />
                 
