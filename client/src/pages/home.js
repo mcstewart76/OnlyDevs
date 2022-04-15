@@ -24,7 +24,7 @@ const Home = () => {
 
               <Col className='sidebar' sm={4}>
 
-                {/* <ConnectedDevs /> */}
+                <ConnectedDevs />
 
                 <Notifications />
 
@@ -34,8 +34,6 @@ const Home = () => {
           <Col className='wall' sm={8}>
 
             <Posts />
-
-
 
                 <div className='wallstuff'>
                   {/* <div className='repobox'>
@@ -69,7 +67,6 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
-
               <PostedContent />  
               {/* <div className='postbox'>
                 <div>
@@ -86,7 +83,7 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
- <PostedContent />  
+ 
                 </div>
 
               </Col>
