@@ -41,11 +41,7 @@ export default function SearchBar() {
       console.error(e);
     }
   };
-  const [searchFriend, setSearchFriend] = useState([
-    { friend: "" },
-
-
-  ]);
+  
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -57,29 +53,40 @@ export default function SearchBar() {
   const [formState, setFormState] = useState({ userName: "" });
 
   const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
+  
+const [searchFriend, setSearchFriend] = useState([
+    {friend: ""}
 
+
+  ]);
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
-    try {
-      // const { data } = await addPost({
-      //   variables: {
-      //     post: {
-      //       title: formState.title,
-      //       description: formState.description,
-      //       userId: formState.userId
-      //     }
-      //   },
+    console.log(searchFriend);
+    setSearchFriend({
+      friend: formState.userName
+    })
+    // try {
+    //   // const { data } = await addPost({
+    //   //   variables: {
+    //   //     post: {
+    //   //       title: formState.title,
+    //   //       description: formState.description,
+    //   //       userId: formState.userId
+    //   //     }
+    //   //   },
 
-      //   // {variables: { githubId: userName} }
+    //   //   // {variables: { githubId: userName} }
 
-      // });
-      window.location.reload();
-      //   auth.login(data.login.token);
-      // navigate("/home")
-    } catch (e) {
-      console.error(e);
-    }
+    //   // });
+
+
+    //   window.location.reload();
+    //   //   auth.login(data.login.token);
+    //   // navigate("/home")
+    // } catch (e) {
+    //   console.error(e);
+    // }
+
   }
     return (
       <div className='search p-2'>
@@ -108,7 +115,7 @@ export default function SearchBar() {
             </Form>
             {searchFriend.map((singleFriend, index) => (
               <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit "  >
-                Friend Name
+                {searchFriend.friend}
               </Button >
 
 

@@ -11,11 +11,6 @@ import {Navigate} from "react-router-dom";
 
 const Home = () => {
 
- try {
-  const currentUser= auth.getUser();
- } catch (error) {
-   
- }
   
 //  const currentuser= auth.getUser()
 
@@ -34,7 +29,7 @@ const Home = () => {
 
                 <Notifications />
 
-            {/* <SearchBar userName={currentUser.data.userName} /> */}
+            <SearchBar/>
           </Col>
 
           <Col className='wall' sm={8}>
