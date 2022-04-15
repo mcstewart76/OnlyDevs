@@ -10,7 +10,7 @@ import {Navigate} from "react-router-dom";
 
 
 const Home = () => {
-
+  const currentUser= auth.getUser();
 // const currentuser= auth.getUser()
 
   return (
@@ -28,14 +28,12 @@ const Home = () => {
 
                 <Notifications />
 
-            <SearchBar userName="mcstewart76" />
+            <SearchBar userName={currentUser.data.userName} />
           </Col>
 
           <Col className='wall' sm={8}>
 
             <Posts />
-
-
 
                 <div className='wallstuff'>
                   {/* <div className='repobox'>
@@ -69,7 +67,6 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
-
               <PostedContent />  
               {/* <div className='postbox'>
                 <div>
@@ -86,7 +83,7 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
-
+ 
                 </div>
 
               </Col>

@@ -91,16 +91,14 @@ query GetGitHubUserRepoReadMes($githubId: String) {
 
 `;
 
-export const QUERY_CONNECTEDDEVS = gql`
+export const QUERY_CONNECTED_DEVS = gql`
 query GetUserById($id: ID!) {
   getUserById(_id: $id) {
-    id
     userName
-    connectedDevs
-    
-  
+    connectedDevs {
+    userName
+    }
   }
- 
 }
 
 `;

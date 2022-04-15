@@ -17,19 +17,23 @@ const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Navbar.Brand href="/"><img src={OD} alt='logo'></img></Navbar.Brand>
           <Nav className="ms-auto">
+          <Link className='linx' to="/">Home</Link>
             {auth.loggedIn() ? (
               <>
+               
+               <Link className='linx' to="/profile">Profile</Link>
                <Link className='linx' to="/login" onClick={logout}>Logout</Link>
                </>
             ):(
               <>
             <Link className='linx' to="/login">Login</Link>
             <Link className='linx' to="/Registration">Register</Link>
+            
             </>
             )
             }
-            <Link className='linx' to="/">Home</Link>
-            <Link className='linx' to="/profile">Profile</Link>
+            
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>
