@@ -172,24 +172,55 @@ body {
     padding-bottom: 1.25rem;
     padding-top: 1.25rem;
     height: 60vh;    
+    overflow: auto;
+}
+
+.wallstuff::-webkit-scrollbar {
+  width: 10px;
+}
+
+.wallstuff::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.wallstuff::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: black(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  
 }
 
 .repobox{
-  border-color: purple;
-  margin-bottom: 1.50rem;
-  border-radius: round;
-  background-color: transparent;
+  align-items: center;
+  box-shadow: 
+    14px 14px 18px 0 rgba(0, 0, 0, 0.25),
+    -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  display: flex;
+  height: 200px;
+  justify-content: center;
   font-family: 'Bebas Neue', cursive;
   color: orange;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .postbox{
-  border-color: purple;
-  margin-bottom: 1.50rem;
-  border-radius: round;
-  background-color: transparent;
+  align-items: center;
+  box-shadow: 
+    14px 14px 18px 0 rgba(0, 0, 0, 0.25),
+    -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  display: flex;
+  height: 200px;
+  justify-content: center;
   font-family: 'Bebas Neue', cursive;
   color: orange;
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
 }
 
 .buttons{
@@ -252,6 +283,37 @@ body {
   min-width: none;
   max-width: 756px;
 }
+
+.sidebarLay{
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  background-color: #a8a8a8 !important;
+  box-shadow: rgba(255, 165, 0, 0.4) 5px 5px,
+    rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px,
+    rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px,
+    rgba(255, 165, 0, 0.4) -5px -5px,
+    rgba(240, 46, 170, 0.3) -10px -10px,
+    rgba(240, 46, 170, 0.2) -15px -15px,
+    rgba(240, 46, 170, 0.1) -20px -20px,
+    rgba(240, 46, 170, 0.05) -25px -25px;
+}
+
+.profilecard{
+  background-color: #a8a8a8 !important;
+  color: #212529;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.biosubtitle{
+  color: #212529;
+  max-width: 80%;
+}
+
 .profile-picture{
   max-width: 450px;
 }
@@ -267,12 +329,54 @@ body {
   border-width: 3px;
   border-style: solid;
   border-radius: 50%;
-  border-color: #7dfdfe;
-  box-shadow: 0 0 10px 2px #7dfdfe;
+  border-color: orange;
+  box-shadow: 0 0 10px 2px orange
 }
 
 .biocard{
-  max-width: 300px ;
+  max-width: 300px; 
+ 
+}
+
+.biotitle{
+  text-decoration: none !important;
+  background-image: linear-gradient(45deg, purple, orange);
+  background-clip: text;
+  font-family: 'Bebas Neue', cursive;
+  font-size: xx-large !important;
+  color: transparent;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.biosubtitle{
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.followersfollowing{
+  color: purple;
+  font-size:larger;
+  font-family: 'Bebas Neue', cursive;
+  margin-top: .50rem;
+}
+
+.repocards{
+  color: orange !important;
+  box-shadow: 
+    14px 14px 18px 0 rgba(0, 0, 0, 0.25),
+    -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
+    background-color:#212529 !important;
+    border: transparent !important;
+    margin-bottom: 1.25rem !important;
+    margin-top: 1.25rem !important;
+
+}
+
+.profilecardsubtitle{
+  color: orange !important;
 }
 
 /* End of Profile Page CSS */ 

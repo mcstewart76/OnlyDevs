@@ -16,15 +16,14 @@ export default function RepoContributions({userName}) {
       <>
     {reposD.map((repo) => (
 
-        <div className='d-flex justify-content-center flex-wrap px-3'>
-          <a href={repo.html_url} >
-          <Card className='m-2' style={{ width: '18rem' }}>
-            <Card.Body >
-              <Card.Title className='text-dark'>{repo.name}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">{repo.language}</Card.Subtitle>
+        <div className=' d-flex justify-content-center flex-wrap px-3'>
+          <Card className='repocards m-2' style={{ width: '18rem' }}>
+            <Card.Body className='sidbarLay'>
+              <Card.Title className='profilecardtitle'>{repo.name}</Card.Title>
+              <Card.Subtitle className='profilecardsubtitle mb-2'>{repo.language}</Card.Subtitle>
             </Card.Body>
           </Card>
-          </a>
+          
         </div>
 
       ))}

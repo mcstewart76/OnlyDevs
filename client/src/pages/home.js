@@ -37,8 +37,8 @@ const Home = () => {
 
             <Posts />
 
-                <div className='wallstuff'>
-                 
+                <div className='wallstuff  px-4'>
+                  
               <PostedContent />  
             <ConnectedDevRepos/>
  
