@@ -19,7 +19,6 @@
     "express": "^4.17.2",
     "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
-    "marked-react": "^1.1.0",
     "moment": "^2.29.2",
     "mongoose": "^6.2.0"
   },
