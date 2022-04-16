@@ -7,8 +7,8 @@ import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
-import ConnectedDevRepos from '../components/ConnectedDevRepos';
 
+import DevsRepos from '../components/DevsRepos'
 
 const Home = () => {
 
@@ -40,8 +40,8 @@ const Home = () => {
                 <div className='wallstuff  px-4'>
                   
               <PostedContent />  
-            <ConnectedDevRepos/>
- 
+           
+            <DevsRepos/>
                 </div>
 
               </Col>
