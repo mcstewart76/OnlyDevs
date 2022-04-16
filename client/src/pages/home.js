@@ -9,10 +9,12 @@ import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
 import RepoWallContent from '../components/Repowallcontent';
 
+import DevsRepos from '../components/DevsRepos'
 
 const Home = () => {
 
-// const currentuser= auth.getUser()
+  
+//  const currentuser= auth.getUser()
 
   return (
     <>
@@ -25,69 +27,22 @@ const Home = () => {
 
               <Col className='sidebar' sm={4}>
 
-                {/* <ConnectedDevs /> */}
+                <ConnectedDevs />
 
-                <Notifications />
+                  {/* <Notifications /> */}
 
-            <SearchBar userName="mcstewart76" />
+            <SearchBar/>
           </Col>
 
           <Col className='wall' sm={8}>
 
             <Posts />
 
-
-
-                <div className='wallstuff'>
-                  {/* <div className='repobox'>
-                <div className='repocontent'>
-                  Repo content here
-                </div>
-                <div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
-
-                  {/* <div className='repobox'>
-                <div>
-                  <div className='repocontent'>
-                    Repo content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
-
+                <div className='wallstuff  px-4'>
+                  
               <PostedContent />  
-              {/* <div className='postbox'>
-                <div>
-                  <div className='postcontent'>
-                    Post content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
-              <RepoWallContent />  
+           
+            <DevsRepos/>
                 </div>
 
               </Col>
@@ -102,7 +57,7 @@ const Home = () => {
 
               <p className='text-light'>
 
-              {setTimeout("You need to be logged on !!!", 5000)}
+              {/* {setTimeout("You need to be logged on !!!", 5000)} */}
                               
               <Navigate replace to="/login" />
                 

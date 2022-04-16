@@ -32,7 +32,7 @@ Please direct all questions to the gitHomies team via email or social media
 mcstewart76, KYLETCHIU, ernestotham, mikeforge, jack-bartlett
 
 ## Email
- mcstewart76@gmail.com, kyletchiu@gmail.com, ernestotha@gmail.com, jackbartlettengineering@gmail.com
+ mcstewart76@gmail.com, kyletchiu@gmail.com, ernestotha@gmail.com, mike.forge@gmail.com, jackbartlettengineering@gmail.com
 
 
 ## License

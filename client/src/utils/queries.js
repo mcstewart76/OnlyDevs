@@ -9,6 +9,7 @@ query GetGitHubUser($githubId: String) {
     followers
     following
     location
+    login
   }
 }`;
 
@@ -73,6 +74,7 @@ query GetGitHubUserRepos($githubId: String) {
       language
       updated_at
       id
+      html_url
     }
   }
 }`;
@@ -104,17 +106,14 @@ query GetGitHubUserRepoReadMes($githubId: String) {
 }
 `;
 
-
-export const QUERY_CONNECTEDDEVS = gql`
+export const QUERY_CONNECTED_DEVS = gql`
 query GetUserById($id: ID!) {
   getUserById(_id: $id) {
-    id
     userName
-    connectedDevs
-    
-  
+    connectedDevs {
+    userName
+    }
   }
- 
 }
 
 `;

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Card, ListGroup, Item } from 'react-bootstrap';
-import { QUERY_CONNECTEDDEVS } from '../utils/queries';
+import { QUERY_CONNECTED_DEVS } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import auth from '../utils/auth';
 
 export default function ConnectedDevs() {
 
   const currentUser = auth.getUser();
-  var { data } = useQuery(QUERY_CONNECTEDDEVS,
+  var { data } = useQuery(QUERY_CONNECTED_DEVS,
     {
       variables: { id: currentUser.data._id}
     });
     console.log(data)
-  const conenctedDevsData = data?.getUserById.connectedDevs || [];
+  const connectedDevsData = data?.getUserById.connectedDevs || [];
   return (
     <>
       <div className='notifications'>
@@ -20,7 +20,7 @@ export default function ConnectedDevs() {
       <div className=' d-flex justify-content-center flex-wrap px-3'>
         <Card className='m-2' style={{ width: '18rem' }}>
           <ListGroup variant="flush">
-            {conenctedDevsData.map((Dev) => (
+            {connectedDevsData.map((Dev) => (
               
               <ListGroup.Item className='text-dark'>{Dev.userName}</ListGroup.Item>
               
