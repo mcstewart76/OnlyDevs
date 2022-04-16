@@ -9,6 +9,7 @@ query GetGitHubUser($githubId: String) {
     followers
     following
     location
+    login
   }
 }`;
 
@@ -97,7 +98,7 @@ query GetUserById($id: ID!) {
   getUserById(_id: $id) {
     userName
     connectedDevs {
-      userName
+    userName
     }
   }
 }

@@ -12,7 +12,7 @@ export default function ConnectedDevs() {
       variables: { id: currentUser.data._id}
     });
     console.log(data)
-  const conenctedDevsData = data?.getUserById.connectedDevs || [];
+  const connectedDevsData = data?.getUserById.connectedDevs || [];
   return (
     <>
       <div className='notifications'>
@@ -20,7 +20,7 @@ export default function ConnectedDevs() {
       <div className=' d-flex justify-content-center flex-wrap px-3'>
         <Card className='m-2' style={{ width: '18rem' }}>
           <ListGroup variant="flush">
-            {conenctedDevsData.map((Dev) => (
+            {connectedDevsData.map((Dev) => (
               
               <ListGroup.Item className='text-dark' key={Dev.userName}>{Dev.userName}</ListGroup.Item>
               

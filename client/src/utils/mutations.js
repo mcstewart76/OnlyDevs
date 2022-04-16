@@ -49,4 +49,17 @@ mutation Mutation($post: PostInput) {
     userId
   }
 }
-`
+`;
+
+
+export const ADD_CONNECTED_DEV = gql`
+mutation AddConnectedDev($userName: String!) {
+  addConnectedDev(userName: $userName) {
+    id
+    userName
+    email
+    connectedDevs {
+      userName
+    }
+  }
+}`;
