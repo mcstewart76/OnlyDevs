@@ -13,6 +13,7 @@ export default function ConnectedDevs() {
     });
     console.log(data)
   const connectedDevsData = data?.getUserById.connectedDevs || [];
+  let counter = 0; 
   return (
     <>
       <div className='notifications mx-3'>

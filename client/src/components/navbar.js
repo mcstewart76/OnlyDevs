@@ -8,7 +8,7 @@ const Navigation = () => {
   const logout = (event) => {
     event.preventDefault();
     auth.logout();
-    Navigate("./login")
+    Navigate("/login")
   };
 
   return (
