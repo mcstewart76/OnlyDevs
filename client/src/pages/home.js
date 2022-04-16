@@ -10,6 +10,7 @@ import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
 
 
+
 const Home = () => {
 
   
@@ -70,6 +71,7 @@ const Home = () => {
                 </div>
               </div> */}
               <PostedContent />  
+              <ConnectedDevRepos/>
               {/* <div className='postbox'>
                 <div>
                   <div className='postcontent'>

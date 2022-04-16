@@ -11,7 +11,7 @@ export default function RepoContributions({userName}) {
           variables: { githubId: userName }
         });
 
-      const reposD = data?.getGitHubUserRepos.repos || [];
+      const reposD = data?.getGitHubUserRepos.repoReadMes || [];
   return (
       <>
     {reposD.map((repo) => (
