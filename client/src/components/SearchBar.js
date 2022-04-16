@@ -62,7 +62,7 @@ const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
 
   }
   return (
-    <div className='search p-2'>
+    <div className='search p-2 mb-5 mt-2'>
       <div className='searchbox'>
         <h1 className='makingposts'>Search</h1>
         <div>

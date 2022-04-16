@@ -58,6 +58,7 @@ body {
   background-color:  #212529;
 }
 
+
 .devs{
   background-color: lightgray;
   border-radius:5%;
@@ -82,6 +83,7 @@ body {
   background-color: transparent !important;
   color: purple !important;
   border-color: transparent !important;
+  
 }
 
 .notifications{
