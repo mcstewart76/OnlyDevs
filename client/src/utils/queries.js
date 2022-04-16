@@ -74,6 +74,7 @@ query GetGitHubUserRepos($githubId: String) {
       language
       updated_at
       id
+      html_url
     }
   }
 }`;

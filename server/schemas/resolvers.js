@@ -57,7 +57,7 @@ const resolvers = {
 
     getGitHubUserRepos:  async (parent, gitHubUserId) => {
      
-      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=2`)
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
       return {repos: githubUserRepos.data}
   
   },
@@ -72,8 +72,8 @@ const resolvers = {
 
 getGitHubUserRepoReadMes:  async (parent, gitHubUserId) => {
    
-  const repos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)  
-  console.log(typeof (repos.data))
+  const repos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=2`)  
+  // console.log(typeof (repos.data))
   var RepoData =[]
   var repoCount = 0
   for(const repo in repos.data){
@@ -95,7 +95,7 @@ getGitHubUserRepoReadMes:  async (parent, gitHubUserId) => {
 
 
   
-  console.log(RepoData)
+  // console.log(RepoData)
   return {repoReadMes: RepoData}
 
 },
