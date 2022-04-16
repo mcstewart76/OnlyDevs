@@ -58,6 +58,7 @@ body {
   background-color:  #212529;
 }
 
+
 .devs{
   background-color: lightgray;
   border-radius:5%;
@@ -76,6 +77,13 @@ body {
     rgba(240, 46, 170, 0.05) -25px -25px;
     margin-bottom: 1.25rem;
     
+}
+
+.devnames{
+  background-color: transparent !important;
+  color: purple !important;
+  border-color: transparent !important;
+  
 }
 
 .notifications{
@@ -171,7 +179,7 @@ body {
     text-align: center;
     padding-bottom: 1.25rem;
     padding-top: 1.25rem;
-    height: 60vh;    
+    height: 70vh;    
     overflow: auto;
 }
 
@@ -200,7 +208,7 @@ body {
     -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   display: flex;
-  height: 200px;
+  
   justify-content: center;
   font-family: 'Bebas Neue', cursive;
   color: orange;
@@ -382,6 +390,10 @@ body {
 
 .profilecardsubtitle{
   color: orange !important;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* End of Profile Page CSS */ 

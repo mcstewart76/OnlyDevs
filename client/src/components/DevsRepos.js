@@ -35,7 +35,8 @@ export default function DevsRepos({currentUser}) {
 
                 //     </div>
                 // </div>
-                <Card key={counter++} style={{ width: '40rem' }}>
+                <div className='p-3 repobox '>
+                <Card className='d-flex bg-dark text-white' key={counter++} >
                 <Card.Body>
                     <Card.Title>{repo.repoName}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{repo.gitHubUserID}</Card.Subtitle>
@@ -43,10 +44,9 @@ export default function DevsRepos({currentUser}) {
                     <Markdown>{repo.repoReadMe}</Markdown>
 
                     <Card.Link href={repo.repoUrl}>repo</Card.Link>
-
                 </Card.Body>
                 </Card>
-
+                </div>
 
 
             ))}

@@ -22,18 +22,18 @@ const Home = () => {
 
         {auth.loggedIn() ?
           (
-            <Row className='maincontent' sm={4}>
+            <Row className='maincontent ' sm={4}>
 
-              <Col className='sidebar' sm={4}>
-
+              <Col className='sidebar sideMin justify-content-center' sm={4}>
+                <SearchBar/>
                 <ConnectedDevs />
 
                   {/* <Notifications /> */}
 
-            <SearchBar/>
+            
           </Col>
 
-          <Col className='wall' sm={8}>
+          <Col className='wall ' sm={8}>
 
             <Posts />
 
