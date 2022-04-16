@@ -12,6 +12,7 @@ export default function RepoContributions({userName}) {
         });
 
       const reposD = data?.getGitHubUserRepos.repos || [];
+      console.log("REPO DATAAAAA", reposD);
   return (
       <>
     {reposD.map((repo) => (

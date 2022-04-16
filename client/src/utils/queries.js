@@ -77,6 +77,20 @@ query GetGitHubUserRepos($githubId: String) {
   }
 }`;
 
+// export const QUERY_GITHUB_REPO_FOR_USER = gql`
+// query GetGitHubUserRepoReadMes($githubId: String) {
+//   getGitHubUserRepoReadMes(githubID: $githubId) {
+//     repoReadMes {
+//       gitHubUserID
+//       repoName
+//       repoUrl
+//       repoReadMe
+//     }
+//   }
+// }
+
+// `;
+
 export const QUERY_GITHUB_REPO_FOR_USER = gql`
 query GetGitHubUserRepoReadMes($githubId: String) {
   getGitHubUserRepoReadMes(githubID: $githubId) {
@@ -88,8 +102,8 @@ query GetGitHubUserRepoReadMes($githubId: String) {
     }
   }
 }
-
 `;
+
 
 export const QUERY_CONNECTEDDEVS = gql`
 query GetUserById($id: ID!) {

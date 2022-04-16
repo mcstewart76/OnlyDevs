@@ -7,6 +7,7 @@ import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
+import RepoWallContent from '../components/Repowallcontent';
 
 
 const Home = () => {
@@ -86,7 +87,7 @@ const Home = () => {
                   </Form>
                 </div>
               </div> */}
- <PostedContent />  
+              <RepoWallContent />  
                 </div>
 
               </Col>

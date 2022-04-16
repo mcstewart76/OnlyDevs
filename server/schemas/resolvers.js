@@ -25,7 +25,7 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    
+
 
     getAllPosts: async () => {
       return await Post.find();
@@ -36,7 +36,7 @@ const resolvers = {
 
       return PostData
     },
-    
+
     getGitHubUser: async (parent, gitHubUserId) => {
 
       const githubUserData = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}`)
@@ -55,51 +55,53 @@ const resolvers = {
       return { repos: githubUserRepos.data }
     },
 
-    getGitHubUserRepos:  async (parent, gitHubUserId) => {
-     
+    getGitHubUserRepos: async (parent, gitHubUserId) => {
+
       const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
-      return {repos: githubUserRepos.data}
-  
-  },
+      return { repos: githubUserRepos.data }
 
-  getGitHubUserRepoReadMe:  async (parent, gitHubUserId) => {
-     
-    const githubUserRepoReadMe = await axios.get(`https://raw.githubusercontent.com/${gitHubUserId.githubID}/${gitHubUserId.repo}/${gitHubUserId.branch}/README.md`)
-    // console.log(githubUserRepoReadMe)
-    return {repoReadMe: githubUserRepoReadMe.data}
+    },
 
-},
+    getGitHubUserRepoReadMe: async (parent, gitHubUserId) => {
 
-getGitHubUserRepoReadMes:  async (parent, gitHubUserId) => {
-   
-  const repos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)  
-  console.log(typeof (repos.data))
-  var RepoData =[]
-  var repoCount = 0
-  for(const repo in repos.data){
-    
-    try{
-      RepoData[repoCount] = {gitHubUserID: gitHubUserId.githubID, repoName:(repos.data[repo]).name,  repoUrl: (repos.data[repo]).html_url, 
-      repoReadMe: Readme = (await axios.get(`https://raw.githubusercontent.com/${gitHubUserId.githubID}/${repos.data[repo].name}/${repos.data[repo].default_branch}/README.md`)).data 
-    }
-  }
-  catch{
-    RepoData[repoCount] = {gitHubUserID: gitHubUserId.githubID, repoName:(repos.data[repo]).name,  repoUrl: (repos.data[repo]).html_url, 
-      repoReadMe: "No ReadMe found"
+      const githubUserRepoReadMe = await axios.get(`https://raw.githubusercontent.com/${gitHubUserId.githubID}/${gitHubUserId.repo}/${gitHubUserId.branch}/README.md`)
+      // console.log(githubUserRepoReadMe)
+      return { repoReadMe: githubUserRepoReadMe.data }
 
-  }
-}
-    repoCount++;
+    },
 
-  }
+    getGitHubUserRepoReadMes: async (parent, gitHubUserId) => {
+
+      const repos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
+      console.log(typeof (repos.data))
+      var RepoData = []
+      var repoCount = 0
+      for (const repo in repos.data) {
+
+        try {
+          RepoData[repoCount] = {
+            gitHubUserID: gitHubUserId.githubID, repoName: (repos.data[repo]).name, repoUrl: (repos.data[repo]).html_url,
+            repoReadMe: Readme = (await axios.get(`https://raw.githubusercontent.com/${gitHubUserId.githubID}/${repos.data[repo].name}/${repos.data[repo].default_branch}/README.md`)).data
+          }
+        }
+        catch {
+          RepoData[repoCount] = {
+            gitHubUserID: gitHubUserId.githubID, repoName: (repos.data[repo]).name, repoUrl: (repos.data[repo]).html_url,
+            repoReadMe: "No ReadMe found"
+
+          }
+        }
+        repoCount++;
+
+      }
 
 
-  
-  console.log(RepoData)
-  return {repoReadMes: RepoData}
 
-},
-    
+      console.log(RepoData)
+      return { repoReadMes: RepoData }
+
+    },
+
   },
 
   Mutation: {
@@ -112,11 +114,11 @@ getGitHubUserRepoReadMes:  async (parent, gitHubUserId) => {
     addConnectedDev: async (parent, params, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(
-          context.user._id ,
-          {$addToSet: {connectedDevs: {userName: params.userName}}},
+          context.user._id,
+          { $addToSet: { connectedDevs: { userName: params.userName } } },
           { runValidators: true, new: true },
- 
-         );
+
+        );
       }
       throw new AuthenticationError('You need to be logged in!');
     },
