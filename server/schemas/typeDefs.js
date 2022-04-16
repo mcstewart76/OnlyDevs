@@ -86,6 +86,7 @@ type gitHubFriend{
     name: String
     language: String
     updated_at: String
+    html_url: String
    
   }
 
