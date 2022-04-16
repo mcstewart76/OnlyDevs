@@ -3,15 +3,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Posts from '../components/Posts';
 import Notifications from '../components/Notifications'
 import ConnectedDevs from '../components/ConnectedDevs'
-//import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
+import ConnectedDevRepos from '../components/ConnectedDevRepos';
 
 
 const Home = () => {
 
-// const currentuser= auth.getUser()
+  
+//  const currentuser= auth.getUser()
 
   return (
     <>
@@ -26,9 +28,9 @@ const Home = () => {
 
                 <ConnectedDevs />
 
-                <Notifications />
+                  {/* <Notifications /> */}
 
-            {/* <SearchBar userName="mcstewart76" /> */}
+            <SearchBar/>
           </Col>
 
           <Col className='wall' sm={8}>
@@ -36,53 +38,9 @@ const Home = () => {
             <Posts />
 
                 <div className='wallstuff  px-4'>
-                  {/* <div className='repobox'>
-                <div className='repocontent'>
-                  Repo content here
-                </div>
-                <div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
-
-                  {/* <div className='repobox'>
-                <div>
-                  <div className='repocontent'>
-                    Repo content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
+                  
               <PostedContent />  
-              {/* <div className='postbox'>
-                <div>
-                  <div className='postcontent'>
-                    Post content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
+            <ConnectedDevRepos/>
  
                 </div>
 
@@ -98,7 +56,7 @@ const Home = () => {
 
               <p className='text-light'>
 
-              {setTimeout("You need to be logged on !!!", 5000)}
+              {/* {setTimeout("You need to be logged on !!!", 5000)} */}
                               
               <Navigate replace to="/login" />
                 

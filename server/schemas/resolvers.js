@@ -43,21 +43,21 @@ const resolvers = {
       return githubUserData.data
     },
 
-    getGitHubUserRepos: async (parent, gitHubUserId) => {
-      // Attempt to hit the db first for this information
+    // getGitHubUserRepos: async (parent, gitHubUserId) => {
+    //   // Attempt to hit the db first for this information
 
-      // Return if present
+    //   // Return if present
 
-      // If not there make the request below
-      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
+    //   // If not there make the request below
+    //   const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
 
-      // Store that request to the db
-      return { repos: githubUserRepos.data }
-    },
+    //   // Store that request to the db
+    //   return { repos: githubUserRepos.data }
+    // },
 
     getGitHubUserRepos:  async (parent, gitHubUserId) => {
      
-      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=6`)
+      const githubUserRepos = await axios.get(`https://api.github.com/users/${gitHubUserId.githubID}/repos?sort=pushed&per_page=2`)
       return {repos: githubUserRepos.data}
   
   },

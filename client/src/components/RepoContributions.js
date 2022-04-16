@@ -23,6 +23,7 @@ export default function RepoContributions({userName}) {
               <Card.Subtitle className='profilecardsubtitle mb-2'>{repo.language}</Card.Subtitle>
             </Card.Body>
           </Card>
+          
         </div>
 
       ))}
