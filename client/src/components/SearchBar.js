@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useMutation } from "@apollo/client"
+import { useNavigate} from "react-router-dom";
 // import { QUERY_GITHUB_USER } from '../utils/queries';
 
 import { DebounceInput } from 'react-debounce-input';
@@ -8,22 +9,6 @@ import { ADD_CONNECTED_DEV } from '../utils/mutations';
 
 
 export default function SearchBar() {
-
-
-  //   const handleFriend = async (event) => {
-  //     event.preventDefault();
-  //     console.log(formState);
-  //     try {
-  //       const { data } = await login({
-  //         variables: { ...formState },
-  //       });
-
-  //       // navigate("/home")
-  //     } catch (e) {
-  //       console.error(e);
-  //     } 
-  //   };
-
 
   const handleAddFriend = async (event) => {
     event.preventDefault();
@@ -34,6 +19,7 @@ export default function SearchBar() {
         variables: { userName: formState.userName },
       })
       console.log(data);
+      
     }
 
     // navigate("/home")
@@ -41,7 +27,8 @@ export default function SearchBar() {
       console.error(e);
     }
   };
-  
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -52,41 +39,27 @@ export default function SearchBar() {
   };
   const [formState, setFormState] = useState({ userName: "" });
 
+  const [buttonState, setButtonState] = useState(false);
+
   const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
-  
-const [searchFriend, setSearchFriend] = useState([
+
+const [searchFriend, setSearchFriend] = useState(
     {friend: ""}
 
 
-  ]);
+  );
+const handleFriendPage = () => {
+  navigate("/profile", {state:{userName: formState.userName}} )
+}
+
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
     console.log(searchFriend);
+    setButtonState(true);
     setSearchFriend({
       friend: formState.userName
     })
-    // try {
-    //   // const { data } = await addPost({
-    //   //   variables: {
-    //   //     post: {
-    //   //       title: formState.title,
-    //   //       description: formState.description,
-    //   //       userId: formState.userId
-    //   //     }
-    //   //   },
-
-    //   //   // {variables: { githubId: userName} }
-
-    //   // });
-
-
-    //   window.location.reload();
-    //   //   auth.login(data.login.token);
-    //   // navigate("/home")
-    // } catch (e) {
-    //   console.error(e);
-    // }
-
+   
   }
     return (
       <div className='search p-2'>
@@ -113,18 +86,17 @@ const [searchFriend, setSearchFriend] = useState([
                 Search
               </Button >
             </Form>
-            {searchFriend.map((singleFriend, index) => (
-              <Button id="SearchBtn" key={index} className="buttons" variant="primary" type="submit "  >
+
+                {buttonState && <> <Button id="SearchBtn"  className="buttons" variant="primary" type="submit " onClick={handleFriendPage}  >
                 {searchFriend.friend}
               </Button >
-
-
-
-            ))}{searchFriend.length > 1 && (
-              <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={handleAddFriend}>
-                Add Friend Button
+              <Button id="SearchBtn" className="buttons ms-2" variant="primary" type="submit" onClick={handleAddFriend}>
+                Add Friend
               </Button >
-            )}
+              </>
+              }
+          
+          
 
           </div>
         </div>
