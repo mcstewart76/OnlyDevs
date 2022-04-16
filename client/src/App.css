@@ -308,6 +308,11 @@ body {
   align-items: center !important;
   text-align: center !important;
 }
+.profilecardtitle{
+  text-decoration: none;
+  color: orange !important;
+
+}
 
 .biosubtitle{
   color: #212529;
