@@ -7,6 +7,7 @@ import SearchBar from '../components/SearchBar';
 import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
+import ConnectedDevRepos from '../components/ConnectedDevRepos';
 
 
 const Home = () => {
@@ -39,7 +40,7 @@ const Home = () => {
                 <div className='wallstuff'>
                  
               <PostedContent />  
-             
+            <ConnectedDevRepos/>
  
                 </div>
 
