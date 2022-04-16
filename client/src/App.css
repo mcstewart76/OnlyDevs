@@ -200,7 +200,7 @@ body {
     -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   display: flex;
-  height: 200px;
+  
   justify-content: center;
   font-family: 'Bebas Neue', cursive;
   color: orange;
@@ -382,6 +382,10 @@ body {
 
 .profilecardsubtitle{
   color: orange !important;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* End of Profile Page CSS */ 

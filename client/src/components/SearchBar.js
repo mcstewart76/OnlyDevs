@@ -19,8 +19,9 @@ const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
         variables: { userName: formState.userName },
       })
       console.log(data);
+      window.location.reload();
     }
-
+    
     // navigate("/home")
     catch (e) {
       console.error(e);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import OD from '../ODNavbar.png'
 import auth from '../utils/auth';
 
@@ -8,6 +8,7 @@ const Navigation = () => {
   const logout = (event) => {
     event.preventDefault();
     auth.logout();
+    Navigate("./login")
   };
 
   return (
