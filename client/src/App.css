@@ -78,6 +78,12 @@ body {
     
 }
 
+.devnames{
+  background-color: transparent !important;
+  color: purple !important;
+  border-color: transparent !important;
+}
+
 .notifications{
     background-color: lightgray;
     border-radius:5%;
@@ -171,7 +177,7 @@ body {
     text-align: center;
     padding-bottom: 1.25rem;
     padding-top: 1.25rem;
-    height: 60vh;    
+    height: 70vh;    
     overflow: auto;
 }
 

@@ -18,11 +18,11 @@ export default function ConnectedDevs() {
       <div className='notifications'>
       <h1 className='makingposts'>Connected Devs</h1>
       <div className=' d-flex justify-content-center flex-wrap px-3'>
-        <Card className='m-2' style={{ width: '18rem' }}>
+        <Card className='devnames m-2' style={{ width: '18rem' }}>
           <ListGroup variant="flush">
             {connectedDevsData.map((Dev) => (
               
-              <ListGroup.Item className='text-dark'>{Dev.userName}</ListGroup.Item>
+              <ListGroup.Item className='devnames'>{Dev.userName}</ListGroup.Item>
               
               ))}
           </ListGroup>
