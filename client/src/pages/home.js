@@ -8,7 +8,7 @@ import PostedContent from '../components/Postedcontent';
 import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
 
-import DevsRepos from '../components/DevsRepos'
+import AllRepos from '../components/HomeAllRepos'
 
 const Home = () => {
 
@@ -41,7 +41,7 @@ const Home = () => {
                   
               <PostedContent />  
            
-            <DevsRepos/>
+            <AllRepos/>
                 </div>
 
               </Col>

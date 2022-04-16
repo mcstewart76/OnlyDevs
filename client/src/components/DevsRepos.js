@@ -7,12 +7,13 @@ import Markdown from 'marked-react';
 
 
 
-export default function DevsRepos() {
-    const currentUser= auth.getUser();
+export default function DevsRepos({currentUser}) {
+    // const currentUser= auth.getUser();
 
     var { data } = useQuery(QUERY_GITHUB_REPO_FOR_USER,
         {
-            variables: { githubId:  currentUser.data.userName }
+            // variables: { githubId:  currentUser.data.userName }
+            variables: { githubId:  currentUser }
         });
     console.log(data)
 

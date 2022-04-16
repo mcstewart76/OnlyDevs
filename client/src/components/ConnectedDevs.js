@@ -13,12 +13,13 @@ export default function ConnectedDevs() {
     });
     console.log(data)
   const connectedDevsData = data?.getUserById.connectedDevs || [];
+  let counter = 0; 
   return (
     <>
       <div className='notifications'>
       <h1 className='makingposts'>Connected Devs</h1>
       <div className=' d-flex justify-content-center flex-wrap px-3'>
-        <Card className='m-2' style={{ width: '18rem' }}>
+        <Card key={counter++} className='m-2' style={{ width: '18rem' }}>
           <ListGroup variant="flush">
             {connectedDevsData.map((Dev) => (
               
