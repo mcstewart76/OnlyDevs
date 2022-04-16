@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useMutation } from "@apollo/client"
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { QUERY_GITHUB_USER } from '../utils/queries';
 
 import { DebounceInput } from 'react-debounce-input';
@@ -9,7 +9,7 @@ import { ADD_CONNECTED_DEV } from '../utils/mutations';
 
 
 export default function SearchBar() {
-
+const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
   const handleAddFriend = async (event) => {
     event.preventDefault();
 
@@ -19,7 +19,6 @@ export default function SearchBar() {
         variables: { userName: formState.userName },
       })
       console.log(data);
-      
     }
 
     // navigate("/home")
@@ -41,16 +40,16 @@ export default function SearchBar() {
 
   const [buttonState, setButtonState] = useState(false);
 
-  const [addConnectedDev, { error, data }] = useMutation(ADD_CONNECTED_DEV);
+  
 
-const [searchFriend, setSearchFriend] = useState(
-    {friend: ""}
+  const [searchFriend, setSearchFriend] = useState(
+    { friend: "" }
 
 
   );
-const handleFriendPage = () => {
-  navigate("/profile", {state:{userName: formState.userName}} )
-}
+  const handleFriendPage = () => {
+    navigate("/profileDisplay", { state: { userName: formState.userName } })
+  }
 
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
@@ -59,48 +58,48 @@ const handleFriendPage = () => {
     setSearchFriend({
       friend: formState.userName
     })
-   
+
   }
-    return (
-      <div className='search p-2'>
-        <div className='searchbox'>
-          <h1 className='makingposts'>Search</h1>
-          <div>
-            <Form >
-              <Form.Group className="mb-3 px-3">
-                <Form.Label>Find Devs</Form.Label>
-                <DebounceInput
-                  minLength={2}
-                  debounceTimeout={300}
-                  onChange={handleChange}
-                  element={Form.Control}
-                  placeholder="Find by GitHub Username"
-                  name="userName"
-                  type="userName"
-                  value={formState.userName}
+  return (
+    <div className='search p-2'>
+      <div className='searchbox'>
+        <h1 className='makingposts'>Search</h1>
+        <div>
+          <Form >
+            <Form.Group className="mb-3 px-3">
+              <Form.Label>Find Devs</Form.Label>
+              <DebounceInput
+                minLength={2}
+                debounceTimeout={300}
+                onChange={handleChange}
+                element={Form.Control}
+                placeholder="Find by GitHub Username"
+                name="userName"
+                type="userName"
+                value={formState.userName}
 
-                />
-                <Button className='usernamebtn'></Button>
-              </Form.Group>
-              <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={handleSearchSubmit} text="Search">
-                Search
-              </Button >
-            </Form>
+              />
+              <Button className='usernamebtn'></Button>
+            </Form.Group>
+            <Button id="SearchBtn" className="buttons" variant="primary" type="submit" onClick={handleSearchSubmit} text="Search">
+              Search
+            </Button >
+          </Form>
 
-                {buttonState && <> <Button id="SearchBtn"  className="buttons" variant="primary" type="submit " onClick={handleFriendPage}  >
-                {searchFriend.friend}
-              </Button >
-              <Button id="SearchBtn" className="buttons ms-2" variant="primary" type="submit" onClick={handleAddFriend}>
-                Add Friend
-              </Button >
-              </>
-              }
-          
-          
+          {buttonState && <> <Button id="SearchBtn" className="buttons" variant="primary" type="submit " onClick={handleFriendPage}  >
+            {searchFriend.friend}
+          </Button >
+            <Button id="SearchBtn" className="buttons ms-2" variant="primary" type="submit" onClick={handleAddFriend}>
+              Add Friend
+            </Button >
+          </>
+          }
 
-          </div>
+
+
         </div>
       </div>
-    )
-  };
+    </div>
+  )
+};
 

@@ -5,6 +5,7 @@ import {HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Home from './pages/home';
 import Profile from './pages/profile';
+import ProfileDisplay from './pages/ProfileDisplay';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Registration from './pages/Registration';
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
@@ -48,7 +49,7 @@ function App() {
 					<Route path='/Registration' element={<Registration />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/login' element={<Login />} />
-
+					<Route path='/ProfileDisplay' element={<ProfileDisplay />} />
 				</Routes>
 			</Router>
 		</ApolloProvider>

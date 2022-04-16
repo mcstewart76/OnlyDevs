@@ -27,7 +27,7 @@ const Home = () => {
 
                 <ConnectedDevs />
 
-                <Notifications />
+                  {/* <Notifications /> */}
 
             <SearchBar/>
           </Col>
@@ -37,53 +37,9 @@ const Home = () => {
             <Posts />
 
                 <div className='wallstuff'>
-                  {/* <div className='repobox'>
-                <div className='repocontent'>
-                  Repo content here
-                </div>
-                <div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
-
-                  {/* <div className='repobox'>
-                <div>
-                  <div className='repocontent'>
-                    Repo content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
+                 
               <PostedContent />  
-              {/* <div className='postbox'>
-                <div>
-                  <div className='postcontent'>
-                    Post content here
-                  </div>
-                  <Form>
-                    <Form.Group className="mb-3">
-                      <Form.Control placeholder="Coment text here" />
-                    </Form.Group>
-                    <Button className='buttons' variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Form>
-                </div>
-              </div> */}
+             
  
                 </div>
 
