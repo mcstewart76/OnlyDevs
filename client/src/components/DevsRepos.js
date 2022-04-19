@@ -7,12 +7,13 @@ import Markdown from 'marked-react';
 
 
 
-export default function DevsRepos() {
-    const currentUser= auth.getUser();
+export default function DevsRepos({currentUser}) {
+    // const currentUser= auth.getUser();
 
     var { data } = useQuery(QUERY_GITHUB_REPO_FOR_USER,
         {
-            variables: { githubId:  currentUser.data.userName }
+            // variables: { githubId:  currentUser.data.userName }
+            variables: { githubId:  currentUser }
         });
     console.log(data)
 
@@ -34,7 +35,8 @@ export default function DevsRepos() {
 
                 //     </div>
                 // </div>
-                <Card key={counter++} style={{ width: '40rem' }}>
+                <div className='p-3 repobox '>
+                <Card className='d-flex bg-dark text-white' key={counter++} >
                 <Card.Body>
                     <Card.Title>{repo.repoName}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{repo.gitHubUserID}</Card.Subtitle>
@@ -42,10 +44,9 @@ export default function DevsRepos() {
                     <Markdown>{repo.repoReadMe}</Markdown>
 
                     <Card.Link href={repo.repoUrl}>repo</Card.Link>
-
                 </Card.Body>
                 </Card>
-
+                </div>
 
 
             ))}

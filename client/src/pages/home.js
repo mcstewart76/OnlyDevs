@@ -9,7 +9,7 @@ import auth from '../utils/auth';
 import {Navigate} from "react-router-dom";
 import RepoWallContent from '../components/Repowallcontent';
 
-import DevsRepos from '../components/DevsRepos'
+import AllRepos from '../components/HomeAllRepos'
 
 const Home = () => {
 
@@ -23,18 +23,18 @@ const Home = () => {
 
         {auth.loggedIn() ?
           (
-            <Row className='maincontent' sm={4}>
+            <Row className='maincontent ' sm={4}>
 
-              <Col className='sidebar' sm={4}>
-
+              <Col className='sidebar sideMin justify-content-center' sm={4}>
+                <SearchBar/>
                 <ConnectedDevs />
 
                   {/* <Notifications /> */}
 
-            <SearchBar/>
+            
           </Col>
 
-          <Col className='wall' sm={8}>
+          <Col className='wall ' sm={8}>
 
             <Posts />
 
@@ -42,7 +42,7 @@ const Home = () => {
                   
               <PostedContent />  
            
-            <DevsRepos/>
+            <AllRepos/>
                 </div>
 
               </Col>

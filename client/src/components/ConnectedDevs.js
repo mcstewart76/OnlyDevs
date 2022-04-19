@@ -13,9 +13,10 @@ export default function ConnectedDevs() {
     });
     console.log(data)
   const connectedDevsData = data?.getUserById.connectedDevs || [];
+  let counter = 0; 
   return (
     <>
-      <div className='notifications'>
+      <div className='notifications mx-3'>
       <h1 className='makingposts'>Connected Devs</h1>
       <div className=' d-flex justify-content-center flex-wrap px-3'>
         <Card className='devnames m-2' style={{ width: '18rem' }}>
@@ -32,4 +33,9 @@ export default function ConnectedDevs() {
       </div>
     </>
   )
+
+
+
+
+
 }
