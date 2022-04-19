@@ -7,13 +7,13 @@ import Markdown from 'marked-react';
 
 
 
-export default function DevsRepos({currentUser}) {
+export default function DevsRepos({ currentUser }) {
     // const currentUser= auth.getUser();
 
     var { data } = useQuery(QUERY_GITHUB_REPO_FOR_USER,
         {
             // variables: { githubId:  currentUser.data.userName }
-            variables: { githubId:  currentUser }
+            variables: { githubId: currentUser }
         });
     console.log(data)
 
@@ -21,7 +21,7 @@ export default function DevsRepos({currentUser}) {
 
     const UserRepoContent = data?.getGitHubUserRepoReadMes.repoReadMes || [];
     let counter = 0;
-   // console.log("USER REPO CONTENT", UserRepoContent)
+    // console.log("USER REPO CONTENT", UserRepoContent)
     return (
         <>
             {UserRepoContent.map((repo) => (
@@ -36,16 +36,16 @@ export default function DevsRepos({currentUser}) {
                 //     </div>
                 // </div>
                 <div className='p-3 repobox '>
-                <Card className='d-flex bg-dark text-white' key={counter++} >
-                <Card.Body>
-                    <Card.Title>{repo.repoName}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{repo.gitHubUserID}</Card.Subtitle>
+                    <Card className='d-flex bg-dark text-white' key={counter++} >
+                        <Card.Body>
+                            <Card.Title>{repo.repoName}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{repo.gitHubUserID}</Card.Subtitle>
 
-                    <Markdown>{repo.repoReadMe}</Markdown>
+                            <Markdown>{repo.repoReadMe}</Markdown>
 
-                    <Card.Link href={repo.repoUrl}>repo</Card.Link>
-                </Card.Body>
-                </Card>
+                            <Card.Link href={repo.repoUrl}>repo</Card.Link>
+                        </Card.Body>
+                    </Card>
                 </div>
 
 
