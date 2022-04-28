@@ -2,7 +2,7 @@
 ![GitHub license](http://img.shields.io/badge/license-MIT-green)
 
 ## Description
-OnlyDavs is a great way for developers to connect and collaberate. This app allows likeminded devs to compare and contrast eachother's work, as well as plan out future projects. It is the successor of the gitHommies app that was the paved the way for this project. With OnlyDevs you can view other developers repos, share your own, and post about the hot tech topics of the day. Welcome to the future of developer collaberation.
+OnlyDevs is a great way for developers to connect and collaberate. This app allows likeminded devs to compare and contrast eachother's work, as well as plan out future projects. It is the successor of the gitHomies app that was what paved the way for this project. With OnlyDevs you can view other developers repos, share your own, and post about the hot tech topics of the day. Welcome to the future of developer collaboration.
 
 ## Live Deployment
 https://only4devs.herokuapp.com/#/
